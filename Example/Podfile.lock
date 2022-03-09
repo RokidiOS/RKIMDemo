@@ -1,0 +1,179 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - Alamofire (4.9.1)
+  - DoraemonKit (3.1.2):
+    - DoraemonKit/Core (= 3.1.2)
+  - DoraemonKit/Core (3.1.2):
+    - AFNetworking
+    - FMDB
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
+  - IQKeyboardManager (6.5.9)
+  - JXPhotoBrowser (3.1.4)
+  - Kingfisher (4.10.1)
+  - LookinServer (1.0.4)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+  - RKBaseView (0.1.0):
+    - RKLogger
+    - RKUtils
+    - SnapKit (~> 4.2.0)
+  - RKHandyJSON (0.1.2)
+  - RKILogger (0.1.2)
+  - RKIM (0.1.0):
+    - IQKeyboardManager (~> 6.5.6)
+    - JXPhotoBrowser
+    - Kingfisher (~> 4.10.1)
+    - LookinServer
+    - Moya (~> 13.0.1)
+    - RKBaseView
+    - RKHandyJSON
+    - RKIMCore
+    - RKLogger
+    - RKSocket
+    - SnapKit (~> 4.2.0)
+    - Then (~> 2.7.0)
+    - TZImagePickerController
+    - WCDB.swift
+  - RKIMCore (0.1.0):
+    - Moya (~> 13.0.1)
+    - RKHandyJSON
+    - RKLogger
+    - RKUtils
+    - WCDB.swift
+  - RKIUtils (0.1.2)
+  - RKLogger (0.1.0)
+  - RKSocket (0.1.1)
+  - RKUtils (0.1.3)
+  - SnapKit (4.2.0)
+  - SQLiteRepairKit (1.2.2):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - Then (2.7.0)
+  - TZImagePickerController (3.7.6)
+  - WCDB.swift (1.0.8.2):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
+
+DEPENDENCIES:
+  - DoraemonKit
+  - LookinServer
+  - RKBaseView (from `https://github.com/RokidiOS/RKBaseView`)
+  - RKHandyJSON (from `../RKHandyJSON`)
+  - RKILogger (from `https://github.com/RokidiOS/RKLogger`)
+  - RKIM (from `../`)
+  - RKIMCore (from `https://github.com/RokidiOS/RKIMCore`)
+  - RKIUtils (from `https://github.com/RokidiOS/RKUtils`)
+
+SPEC REPOS:
+  "git@gitlab.rokid-inc.com:xr_app_platform/ios/spec.git":
+    - JXPhotoBrowser
+    - RKSocket
+  trunk:
+    - AFNetworking
+    - Alamofire
+    - DoraemonKit
+    - FMDB
+    - GCDWebServer
+    - IQKeyboardManager
+    - Kingfisher
+    - LookinServer
+    - Moya
+    - Result
+    - RKLogger
+    - RKUtils
+    - SnapKit
+    - SQLiteRepairKit
+    - Then
+    - TZImagePickerController
+    - WCDB.swift
+    - WCDBOptimizedSQLCipher
+
+EXTERNAL SOURCES:
+  RKBaseView:
+    :git: https://github.com/RokidiOS/RKBaseView
+  RKHandyJSON:
+    :path: "../RKHandyJSON"
+  RKILogger:
+    :git: https://github.com/RokidiOS/RKLogger
+  RKIM:
+    :path: "../"
+  RKIMCore:
+    :git: https://github.com/RokidiOS/RKIMCore
+  RKIUtils:
+    :git: https://github.com/RokidiOS/RKUtils
+
+CHECKOUT OPTIONS:
+  RKBaseView:
+    :commit: 228f9f306903a253fe2ce567ac88464da566966c
+    :git: https://github.com/RokidiOS/RKBaseView
+  RKILogger:
+    :commit: 80055ab45837f74fc1ff47548261d14c9fff4d54
+    :git: https://github.com/RokidiOS/RKLogger
+  RKIMCore:
+    :commit: 5a981d0749f900fcc3f4d9b1f0c3762c24362148
+    :git: https://github.com/RokidiOS/RKIMCore
+  RKIUtils:
+    :commit: df8c98d03508b2ff4a1441b7b732ce41ff900839
+    :git: https://github.com/RokidiOS/RKUtils
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  DoraemonKit: 0a040ae24386654e2a2d2c8d029f5ff5837de3c3
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
+  JXPhotoBrowser: f8657620ab2bbf4ad36bdf9965a0ddc5d7f69049
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RKBaseView: 5269fcda459fc80482073bc2aae4f553272fbac3
+  RKHandyJSON: 9fce85284b68e5f92b23b5fae15affa377915321
+  RKILogger: acb89cf527cde1f6e21425438338f6d1e49873f4
+  RKIM: 21c295cebd7c897ffdc350378d3d9ab2f17ba93a
+  RKIMCore: d6f83ac0f3c9b43d701120df5734ca553a4375d0
+  RKIUtils: 0170015917b7208cef4491421afe6cce74f2cb7c
+  RKLogger: 69b28e27e5b3f6892ed2732834624ec5608d61ee
+  RKSocket: 8dba1b20367329b606fae58d8929e463f4460d80
+  RKUtils: 9f7eb6d53f173ba598d0499c1f219425d96d72d1
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  TZImagePickerController: fb446ac06ae9c217bc849185646a68465bcd0dd4
+  WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
+
+PODFILE CHECKSUM: 6d48b6d66c753f94a4095fd1094bc776e8dccf7c
+
+COCOAPODS: 1.11.2

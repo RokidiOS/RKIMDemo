@@ -1,0 +1,86 @@
+/* 
+ InfoPlist.strings
+ RokidSDK
+ 
+ Created by Rokid on 2021/7/16.
+ 
+ */
+
+login_company = "Please enter company ID";
+login_username = "Please enter account name";
+login_pwd = "Please enter password";
+login_username_tip = "Please enter account name";
+login_pwd_tip = "Please enter password";
+login_btn = "Login";
+login_changepwd_tip = "Hint:Change password";
+login_changepwd_tip_con = "Your password has not been changed for more than 90 days, please change your password";
+login_title = "Account login";
+login_loginbtn = "Login";
+login_forgetbtn = "Forget password？";
+login_account_tip = "The account does not exist, please try again.";
+login_logout_tip = "Your account is logged in elsewhere, please login again";
+login_success = "Logged in successfully";
+
+// 密码相关
+pwd_forgetpwd_title = "Forget password";
+pwd_changePwd_tiptitle = "Change log in password";
+pwd_old = "Old password";
+pwd_new = "New password";
+pwd_confirm = "Confirm";
+
+// 联系人
+contact_state_online = "Online";
+contact_state_offline = "Offline";
+contact_count_begin = "Group Total:  members";
+contact_person = "Contact";
+contact_me = "Me";
+contact_not_invited = "Does not invite any contacts";
+
+// 邀请
+call_cooperation = "的协作";
+call_initiate_soon = "The collaboration with";
+call_join_soon = "The collaboration with";
+call_multiplayer_collaboration = "collaboration";
+call_turned_on = "Turned on";
+call_turned_off = "Turned off";
+call_trumpet_on = "Speaker on";
+call_trumpet_off = "Receiver on";
+call_start = "Start";
+
+// 会议
+meeting_name = "meeting";
+meeting_create_failed = "Create meeting error";
+meeting_screensharing = "Sharing screen...";
+meeting_doodling = "Sharing Whiteboard...";
+meeting_snapshoting = "Annotating...";
+meeting_slaming = "AR labeling";
+meeting_calling = "Calling";
+meeting_muteall_alert_title = "mute all";
+meeting_muteall_alert_content = "Your microphone is off, please turn on";
+meeting_screenshare_alert_title = "Screen Share";
+meeting_screenshare_alert_content = "When this function is enabled, the main screen of others will be locked as your screen";
+meeting_screenshare_start = "Start sharing";
+meeting_doodle_alert_title = "Start \"Whiteboard Sharing\"?";
+meeting_doodle_alert_content = "When this function is enabled, the main screen of others will be locked as your screen";
+meeting_doodle_clearall = "Do you want to remove all doodle?";
+meeting_exit_tip = "Leave the meeting?";
+meeting_exit = "Exit";
+
+// 提示
+toast_getgroupfailed = "Unable to access group information";
+toast_getcontactfailed = "Unable to access contact list";
+toast_rejectinvite = "Declined xxx's meeting invitation";
+toast_hangup = "Hang up";
+toast_busy = "The line was busy";
+toast_savetogallary = "Save to gallary";
+toast_account_notexist = "The account does not exist, please try again.";
+toast_pwd_invalid = "Your passwoerd is invalid. Please try again.";
+
+// 公共
+custom_and = "and";
+custom_person = "Person";
+custom_iknow = "I know";
+custom_cancel = "Cancel";
+custom_confirm = "Confirm";
+custom_network_tip = "Network error";
+custom_create_group = "create group";

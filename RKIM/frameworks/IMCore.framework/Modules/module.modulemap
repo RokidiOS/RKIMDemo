@@ -1,0 +1,11 @@
+framework module IMCore {
+  umbrella header "IMCore.h"
+
+  export *
+  module * { export * }
+}
+
+module IMCore.Swift {
+    header "IMCore-Swift.h"
+    requires objc
+}

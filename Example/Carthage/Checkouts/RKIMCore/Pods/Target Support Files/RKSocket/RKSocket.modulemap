@@ -1,0 +1,6 @@
+framework module RKSocket {
+  umbrella header "RKSocket-umbrella.h"
+
+  export *
+  module * { export * }
+}

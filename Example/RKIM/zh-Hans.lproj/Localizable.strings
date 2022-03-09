@@ -1,0 +1,151 @@
+/* 
+ InfoPlist.strings
+ RokidSDK
+ 
+ Created by Rokid on 2021/7/16.
+ 
+ */
+
+// 登录相关
+login_company = "请输入公司ID";
+login_username = "请输入账号";
+login_pwd = "请输入密码";
+login_username_tip = "请输入用户名";
+login_pwd_tip = "请输入密码";
+login_btn = "登录";
+login_changepwd_tip = "修改密码提示";
+login_changepwd_tip_con = "您的密码已经超过90天未进行修改，请修改密码";
+login_title = "账号登录";
+login_loginbtn = "立即登录";
+login_forgetbtn = "忘记密码？";
+login_account_tip = "该账号不存在，请检查重试";
+login_logout_tip = "您的账号在其他地方登录，请重新登录";
+login_success = "登录成功";
+
+
+// 联系人
+contact_state_online = "在线";
+contact_state_offline = "离线";
+contact_count_begin = "当前小组共";
+contact_person = "联系人";
+contact_me = "我";
+contact_not_invited = "未邀请联系人";
+
+// 邀请
+call_cooperation = "的协作";
+call_initiate_soon = "即将发起";
+call_join_soon = "即将加入";
+call_multiplayer_collaboration = "多人协作";
+call_turned_on = "已开启";
+call_turned_off = "未开启";
+call_trumpet_on = "免提已开";
+call_trumpet_off = "免提已关";
+call_start = "开始协作";
+
+// 会议
+meeting_name = "会议";
+meeting_create_failed = "会议创建失败";
+meeting_screensharing = "屏幕共享中";
+meeting_doodling = "电子白板中";
+meeting_snapshoting = "冻屏标注中";
+meeting_slaming = "AR标注中";
+meeting_calling = "通话中";
+meeting_muteall_alert_title = "全员静音";
+meeting_muteall_alert_content = "您的麦克风已被关闭，若要发言请点击“麦克风”按钮";
+meeting_screenshare_alert_title = "启用屏幕共享？";
+meeting_screenshare_alert_content = "启动该功能后，其他人的主画面将锁定为你的";
+meeting_screenshare_start = "开始共享";
+meeting_doodle_alert_title = "启用电子白板？";
+meeting_doodle_alert_content = "启动该功能后，其他人的主画面将锁定为你的";
+meeting_doodle_clearall = "您要清除所有标注吗？";
+meeting_exit_tip = "是否退出会议";
+meeting_exit = "退出";
+
+// 提示
+toast_getgroupfailed = "小组信息获取失败";
+toast_getcontactfailed = "联系人列表获取失败";
+toast_rejectinvite = "已拒绝xx会议邀请";
+toast_hangup = "已挂断";
+toast_busy = "正忙";
+toast_savetogallary = "已保存至相册";
+toast_account_notexist = "该账号不存在，请检查重试";
+toast_pwd_invalid = "密码错误，请检查重试";
+
+// 公共
+custom_and = "与";
+custom_person = "人";
+custom_iknow = "我知道了";
+custom_cancel = "取消";
+custom_confirm = "确定";
+custom_network_title = "无网络";
+custom_network_tip = "请检查网络配置后重试";
+custom_btntitle_refresh = "刷新";
+custom_create_group = "创建群组";
+
+// 未定义
+custom_appname = "远程协作";
+login_tips = "多人多端 在线协作";
+
+contact_userinfo_name = "姓名";
+contact_userinfo_resolution = "姓名";
+contact_userinfo_post = "岗位";
+contact_userinfo_mobile = "手机号";
+contact_userinfo_account = "账号";
+contact_userinfo_accountvalidityperiod = "账号有效期至";
+contact_userinfo_company = "单位/公司";
+contact_userinfo_version = "版本号";
+contact_userinfo_qr_title = "眼睛端登录二维码";
+contact_userinfo_qr_tip = "眼睛端扫码登录 本端自动退出账号";
+contact_userinfo_logout = "退出登录";
+
+// 登录 login
+
+// 记录 sessionrecord
+sessionrecord_detail_title = "协作记录";
+sessionrecord_detail_starttime = "会议开始时间";
+sessionrecord_detail_jointime = "加入会议时间";
+sessionrecord_detail_exittime = "退出会议时间";
+sessionrecord_detail_timelong = "参会时长";
+sessionrecord_detail_inviter = "发起人";
+sessionrecord_detail_members = "参与成员";
+
+// 通讯录 addressbook
+
+// 协作台 collaborationdesk
+collaborationdesk_group = "群组";
+
+// 我的 mine
+
+mine_celltitle_setting = "设置";
+mine_celltitle_about = "关于";
+mine_celltitle_help = "使用帮助";
+mine_celltitle_glasslogin = "眼镜端登录";
+mine_title_userinfo = "个人信息";
+
+
+mine_action_changePwd = "修改登录密码";
+mine_action_logout = "退出登录";
+
+mine_setting_userinfo = "个人信息";
+mine_title_userinfo = "个人信息";
+
+// 密码相关
+pwd_forgetpwd_title = "忘记密码";
+pwd_changePwd_tiptitle = "修改登录密码";
+pwd_old = "旧密码";
+pwd_new = "新密码";
+pwd_twice = "再次输入新密码";
+pwd_confirm = "确认修改";
+
+
+
+// 公共 custom_btn
+
+custom_btn_sessionrecord = "记录";
+custom_btn_addressbook = "通讯录";
+custom_btn_collaborationdesk = "协作台";
+custom_btn_mine = "我的";
+
+custom_btn_start = "发起协作";
+custom_btn_restart = "重新发起协作";
+

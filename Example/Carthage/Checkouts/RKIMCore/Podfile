@@ -1,0 +1,15 @@
+source 'git@gitlab.rokid-inc.com:xr_app_platform/ios/spec.git'
+source 'https://cdn.cocoapods.org/'
+
+
+platform :ios, '9.0'
+
+target 'IMCore' do
+
+  use_frameworks!
+  pod 'Moya', '~> 13.0.1'
+  pod 'RKSocket'
+  pod 'RKLogger'
+  # Pods for IMCore
+
+end

@@ -1,0 +1,20 @@
+
+use_frameworks!
+source 'https://cdn.cocoapods.org/'
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
+
+platform :ios, '9.0'
+
+url = 'https://github.com/RokidiOS/'
+
+target 'RKIM_Example' do
+  pod 'RKIM', :path => '../'
+  pod 'RKILogger', :git => url + "RKLogger"
+  pod 'RKBaseView', :git => url + "RKBaseView"
+  pod 'RKIUtils', :git => url + "RKUtils"
+  pod 'RKHandyJSON', :path => '../RKHandyJSON'
+  pod 'RKIMCore', :git => url + "RKIMCore"
+  pod 'LookinServer', :configurations => ['Debug']
+  pod 'DoraemonKit'
+ 
+end

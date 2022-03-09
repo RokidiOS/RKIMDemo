@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+  - RKLogger (0.1.0)
+  - RKSocket (0.1.0):
+    - SocketRocket (~> 0.6.0)
+  - SocketRocket (0.6.0)
+
+DEPENDENCIES:
+  - Moya (~> 13.0.1)
+  - RKLogger
+  - RKSocket
+
+SPEC REPOS:
+  "git@gitlab.rokid-inc.com:xr_app_platform/ios/spec.git":
+    - RKLogger
+    - RKSocket
+  trunk:
+    - Alamofire
+    - Moya
+    - Result
+    - SocketRocket
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RKLogger: 97c97c70b4f8f04805798ccba6aa63b1c06e96c1
+  RKSocket: a9c8f363192d94d6098036d14f7f321ccc863e09
+  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+
+PODFILE CHECKSUM: 92a6175563b12b0c3c97c2d0a60496384e701653
+
+COCOAPODS: 1.11.2
