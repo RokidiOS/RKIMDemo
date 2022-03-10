@@ -69,9 +69,11 @@ PODS:
     - RKIHandyJSON
     - RKILogger
     - RKIUtils
+    - RKSocket
     - WCDB.swift
   - RKIUtils (0.1.2)
   - RKLogger (0.1.0)
+  - RKSocket (0.1.0)
   - SnapKit (4.2.0)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
@@ -86,11 +88,12 @@ DEPENDENCIES:
   - DoraemonKit
   - LookinServer
   - RKIBaseView (from `https://github.com/RokidiOS/RKBaseView`)
-  - RKIHandyJSON (from `https://github.com/RokidiOS/RKHandyJSON`)
-  - RKILogger (from `https://github.com/RokidiOS/RKLogger`)
+  - RKIHandyJSON
+  - RKILogger
   - RKIM (from `../`)
   - RKIMCore (from `https://github.com/RokidiOS/RKIMCore`)
-  - RKIUtils (from `https://github.com/RokidiOS/RKUtils`)
+  - RKIUtils
+  - RKSocket (from `https://github.com/RokidiOS/RKSocket`)
 
 SPEC REPOS:
   trunk:
@@ -106,6 +109,9 @@ SPEC REPOS:
     - Moya
     - Result
     - RKHandyJSON
+    - RKIHandyJSON
+    - RKILogger
+    - RKIUtils
     - RKLogger
     - SnapKit
     - SQLiteRepairKit
@@ -117,33 +123,23 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   RKIBaseView:
     :git: https://github.com/RokidiOS/RKBaseView
-  RKIHandyJSON:
-    :git: https://github.com/RokidiOS/RKHandyJSON
-  RKILogger:
-    :git: https://github.com/RokidiOS/RKLogger
   RKIM:
     :path: "../"
   RKIMCore:
     :git: https://github.com/RokidiOS/RKIMCore
-  RKIUtils:
-    :git: https://github.com/RokidiOS/RKUtils
+  RKSocket:
+    :git: https://github.com/RokidiOS/RKSocket
 
 CHECKOUT OPTIONS:
   RKIBaseView:
     :commit: 3a2558dd67075deb16915cc1ef907ed9df0a2b33
     :git: https://github.com/RokidiOS/RKBaseView
-  RKIHandyJSON:
-    :commit: 1fbbda4211059f4f76845b39daf589d142feedff
-    :git: https://github.com/RokidiOS/RKHandyJSON
-  RKILogger:
-    :commit: 80055ab45837f74fc1ff47548261d14c9fff4d54
-    :git: https://github.com/RokidiOS/RKLogger
   RKIMCore:
-    :commit: 545cc4d2564ddfbd51fdffc7af276a35ecc3f51f
+    :commit: a01f219e440b8701be0ed43af0c33a0a5d3d94b5
     :git: https://github.com/RokidiOS/RKIMCore
-  RKIUtils:
-    :commit: df8c98d03508b2ff4a1441b7b732ce41ff900839
-    :git: https://github.com/RokidiOS/RKUtils
+  RKSocket:
+    :commit: df8726a2b8275464516b8af342fb52934e144722
+    :git: https://github.com/RokidiOS/RKSocket
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -162,9 +158,10 @@ SPEC CHECKSUMS:
   RKIHandyJSON: b3928e42af5d7d3b4cefb686079093d130e9066e
   RKILogger: acb89cf527cde1f6e21425438338f6d1e49873f4
   RKIM: 122ee052d507086bc6c30d7300d279163e9dd2fe
-  RKIMCore: 8a1244ccecfceb959c6dcb51ffad5b25e1a0b812
+  RKIMCore: 2f6b0ad46cd490a8f10b05f5113f35c0e539fdce
   RKIUtils: 0170015917b7208cef4491421afe6cce74f2cb7c
   RKLogger: 69b28e27e5b3f6892ed2732834624ec5608d61ee
+  RKSocket: 325bffa5c1c87851fce39b656db0912975ff0909
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
@@ -172,6 +169,6 @@ SPEC CHECKSUMS:
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 4c2b145a31433ec4a26e1c93a225707025c46df1
+PODFILE CHECKSUM: 4756fd6561c61fa51d4e5e5ccf7e569a5f5612d8
 
 COCOAPODS: 1.11.2

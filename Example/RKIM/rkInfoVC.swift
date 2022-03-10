@@ -8,7 +8,7 @@
 
 import UIKit
 import RKIMCore
-import RKLogger
+import RKILogger
 
 class rkInfoVC: UIViewController {
     static let share = rkInfoVC()
