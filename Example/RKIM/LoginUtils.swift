@@ -55,7 +55,7 @@ public class LoginHelper: NSObject {
     
     static let kurlPrex = env.sassURl()
     static let ktokenPrex = "Bearer "
-    class func loginAction(companyID: String?, userName: String?, password: String?, compeletBlock:@escaping (_ token: String?, _ uuid: String?, _ errorMsg: String?) ->Void) {
+    class func loginAction(companyID: String?, userName: String?, password: String?, compeletBlock:@escaping (_ uid: String?, _ token: String?, _ errorMsg: String?) ->Void) {
         guard let userName = userName else {
             compeletBlock(nil, nil, "请输入用户名")
             return

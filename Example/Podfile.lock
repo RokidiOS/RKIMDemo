@@ -57,8 +57,8 @@ PODS:
     - Moya (~> 13.0.1)
     - RKIBaseView
     - RKIHandyJSON
+    - RKILogger
     - RKIMCore
-    - RKLogger
     - SnapKit (~> 4.2.0)
     - Then (~> 2.7.0)
     - TZImagePickerController
@@ -71,7 +71,6 @@ PODS:
     - RKSocket
     - WCDB.swift
   - RKIUtils (0.1.2)
-  - RKLogger (0.1.0)
   - RKSocket (0.1.0)
   - SnapKit (4.2.0)
   - SQLiteRepairKit (1.2.2):
@@ -90,7 +89,7 @@ DEPENDENCIES:
   - RKIHandyJSON
   - RKILogger
   - RKIM (from `../`)
-  - RKIMCore (from `https://github.com/RokidiOS/RKIMCore`)
+  - RKIMCore (from `/Users/chzy/Desktop/Rokid/custom/RKIMCore`)
   - RKIUtils
   - RKSocket (from `https://github.com/RokidiOS/RKSocket`)
 
@@ -110,7 +109,6 @@ SPEC REPOS:
     - RKIHandyJSON
     - RKILogger
     - RKIUtils
-    - RKLogger
     - SnapKit
     - SQLiteRepairKit
     - Then
@@ -124,7 +122,7 @@ EXTERNAL SOURCES:
   RKIM:
     :path: "../"
   RKIMCore:
-    :git: https://github.com/RokidiOS/RKIMCore
+    :path: "/Users/chzy/Desktop/Rokid/custom/RKIMCore"
   RKSocket:
     :git: https://github.com/RokidiOS/RKSocket
 
@@ -132,9 +130,6 @@ CHECKOUT OPTIONS:
   RKIBaseView:
     :commit: 3a2558dd67075deb16915cc1ef907ed9df0a2b33
     :git: https://github.com/RokidiOS/RKBaseView
-  RKIMCore:
-    :commit: a01f219e440b8701be0ed43af0c33a0a5d3d94b5
-    :git: https://github.com/RokidiOS/RKIMCore
   RKSocket:
     :commit: df8726a2b8275464516b8af342fb52934e144722
     :git: https://github.com/RokidiOS/RKSocket
@@ -154,10 +149,9 @@ SPEC CHECKSUMS:
   RKIBaseView: 3e27b7e12a64b3918b1201fa0dcc9ef571ae2b48
   RKIHandyJSON: b3928e42af5d7d3b4cefb686079093d130e9066e
   RKILogger: acb89cf527cde1f6e21425438338f6d1e49873f4
-  RKIM: a6f674801681acfbb37355108ac6a62af27f70ac
-  RKIMCore: 2f6b0ad46cd490a8f10b05f5113f35c0e539fdce
+  RKIM: 2715132248a34c779cce6be32618e1426e8d7cbb
+  RKIMCore: c32c269b8420c04541395f4b82be7237ae41ac26
   RKIUtils: 0170015917b7208cef4491421afe6cce74f2cb7c
-  RKLogger: 69b28e27e5b3f6892ed2732834624ec5608d61ee
   RKSocket: 325bffa5c1c87851fce39b656db0912975ff0909
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
@@ -166,6 +160,6 @@ SPEC CHECKSUMS:
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 4756fd6561c61fa51d4e5e5ccf7e569a5f5612d8
+PODFILE CHECKSUM: 91283371ac3fae47d379e6914450b8b8b6a35341
 
 COCOAPODS: 1.11.2
