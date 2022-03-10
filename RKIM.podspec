@@ -40,7 +40,7 @@ TODO: Add long description of the pod here.
   s.dependency 'SnapKit', '~> 4.2.0'
   s.dependency 'Then', '~> 2.7.0'
   s.dependency 'IQKeyboardManager', '~> 6.5.6'
-  s.dependency 'RKLogger'
+  s.dependency 'RKILogger'
 #  s.dependency 'RKSocket'
   s.dependency 'RKIBaseView'
   s.dependency 'LookinServer', :configurations => ['Debug']
