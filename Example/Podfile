@@ -10,7 +10,7 @@ url = 'https://github.com/RokidiOS/'
 target 'RKIM_Example' do
   pod 'RKIM', :path => '../'
   pod 'RKILogger', :git => url + "RKLogger"
-  pod 'RKBaseView', :git => url + "RKBaseView"
+  pod 'RKIBaseView', :git => url + "RKBaseView"
   pod 'RKIUtils', :git => url + "RKUtils"
   pod 'RKIHandyJSON', :git => url +'RKHandyJSON'
   pod 'RKIMCore', :git => url + "RKIMCore"
@@ -18,3 +18,11 @@ target 'RKIM_Example' do
   pod 'DoraemonKit'
  
 end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
+    end
+  end

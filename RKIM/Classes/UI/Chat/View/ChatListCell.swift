@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RKBaseView
+import RKIBaseView
 import RKHandyJSON
 import Kingfisher
 import RKIMCore

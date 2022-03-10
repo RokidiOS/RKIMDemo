@@ -41,8 +41,8 @@ TODO: Add long description of the pod here.
   s.dependency 'Then', '~> 2.7.0'
   s.dependency 'IQKeyboardManager', '~> 6.5.6'
   s.dependency 'RKLogger'
-  s.dependency 'RKSocket'
-  s.dependency 'RKBaseView'
+#  s.dependency 'RKSocket'
+  s.dependency 'RKIBaseView'
   s.dependency 'LookinServer', :configurations => ['Debug']
 #  s.dependency 'RKImagePicker', '~> 0.1.1'
   s.dependency 'JXPhotoBrowser'#, '~> 3.1.4'
