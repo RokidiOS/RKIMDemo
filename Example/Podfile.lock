@@ -47,7 +47,8 @@ PODS:
     - RKLogger
     - RKUtils
     - SnapKit (~> 4.2.0)
-  - RKHandyJSON (0.1.2)
+  - RKHandyJSON (0.1.0)
+  - RKIHandyJSON (0.1.6)
   - RKILogger (0.1.2)
   - RKIM (0.1.0):
     - IQKeyboardManager (~> 6.5.6)
@@ -88,7 +89,7 @@ DEPENDENCIES:
   - DoraemonKit
   - LookinServer
   - RKBaseView (from `https://github.com/RokidiOS/RKBaseView`)
-  - RKHandyJSON (from `../RKHandyJSON`)
+  - RKIHandyJSON (from `https://github.com/RokidiOS/RKHandyJSON`)
   - RKILogger (from `https://github.com/RokidiOS/RKLogger`)
   - RKIM (from `../`)
   - RKIMCore (from `https://github.com/RokidiOS/RKIMCore`)
@@ -109,6 +110,7 @@ SPEC REPOS:
     - LookinServer
     - Moya
     - Result
+    - RKHandyJSON
     - RKLogger
     - RKUtils
     - SnapKit
@@ -121,8 +123,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   RKBaseView:
     :git: https://github.com/RokidiOS/RKBaseView
-  RKHandyJSON:
-    :path: "../RKHandyJSON"
+  RKIHandyJSON:
+    :git: https://github.com/RokidiOS/RKHandyJSON
   RKILogger:
     :git: https://github.com/RokidiOS/RKLogger
   RKIM:
@@ -136,6 +138,9 @@ CHECKOUT OPTIONS:
   RKBaseView:
     :commit: 228f9f306903a253fe2ce567ac88464da566966c
     :git: https://github.com/RokidiOS/RKBaseView
+  RKIHandyJSON:
+    :commit: 1fbbda4211059f4f76845b39daf589d142feedff
+    :git: https://github.com/RokidiOS/RKHandyJSON
   RKILogger:
     :commit: 80055ab45837f74fc1ff47548261d14c9fff4d54
     :git: https://github.com/RokidiOS/RKLogger
@@ -159,7 +164,8 @@ SPEC CHECKSUMS:
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RKBaseView: 5269fcda459fc80482073bc2aae4f553272fbac3
-  RKHandyJSON: 9fce85284b68e5f92b23b5fae15affa377915321
+  RKHandyJSON: 5c7764a399232b87ecabff442d7a738eee9ba4bb
+  RKIHandyJSON: b3928e42af5d7d3b4cefb686079093d130e9066e
   RKILogger: acb89cf527cde1f6e21425438338f6d1e49873f4
   RKIM: 21c295cebd7c897ffdc350378d3d9ab2f17ba93a
   RKIMCore: d6f83ac0f3c9b43d701120df5734ca553a4375d0
@@ -174,6 +180,6 @@ SPEC CHECKSUMS:
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 6d48b6d66c753f94a4095fd1094bc776e8dccf7c
+PODFILE CHECKSUM: ec99f6ec2f2f944d146c325309bf6de9a10c1cce
 
 COCOAPODS: 1.11.2

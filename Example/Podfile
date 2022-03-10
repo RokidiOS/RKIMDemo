@@ -12,7 +12,7 @@ target 'RKIM_Example' do
   pod 'RKILogger', :git => url + "RKLogger"
   pod 'RKBaseView', :git => url + "RKBaseView"
   pod 'RKIUtils', :git => url + "RKUtils"
-  pod 'RKHandyJSON', :path => '../RKHandyJSON'
+  pod 'RKIHandyJSON', :git => url +'RKHandyJSON'
   pod 'RKIMCore', :git => url + "RKIMCore"
   pod 'LookinServer', :configurations => ['Debug']
   pod 'DoraemonKit'
