@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RKHandyJSON
+import RKIHandyJSON
 
 @objc class DemoNoticeModel: NSObject, HandyJSON {
     public var title: String?

@@ -7,7 +7,7 @@
 
 import Foundation
 import RKIBaseView
-import RKHandyJSON
+import RKIHandyJSON
 import Kingfisher
 import RKIMCore
 

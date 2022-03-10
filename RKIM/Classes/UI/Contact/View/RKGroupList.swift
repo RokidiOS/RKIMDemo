@@ -6,7 +6,7 @@
 //  群组信息tableview
 
 import Foundation
-import RKBaseView
+import RKIBaseView
 import RKIMCore
 
 protocol AddressBookGroupListViewDeleagte: NSObjectProtocol {

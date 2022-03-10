@@ -4,7 +4,7 @@
 //
 //  Created by Rokid on 2021/8/12.
 //
-import RKUtils
+import RKIUtils
 
 class RKCustomListCell: UITableViewCell {
     

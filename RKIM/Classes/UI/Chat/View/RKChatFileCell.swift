@@ -7,7 +7,7 @@
 
 import Foundation
 import SnapKit
-import RKUtils
+import RKIUtils
 import RKIMCore
 
 class RKChatFileCell: RKChatDetailCell {

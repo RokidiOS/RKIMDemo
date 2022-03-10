@@ -10,7 +10,7 @@ import UIKit
 import RKIMCore
 import Kingfisher
 import QuickLook
-import RKUtils
+import RKIUtils
 
 class RKImageVideoMessageVC: UIViewController {
     var groupID: String?

@@ -6,7 +6,7 @@
 //
 
 import SnapKit
-import RKUtils
+import RKIUtils
 import RKIMCore
 
 class RKChatVoiceCell: RKChatDetailCell {

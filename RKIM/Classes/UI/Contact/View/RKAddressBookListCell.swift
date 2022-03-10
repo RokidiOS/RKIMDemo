@@ -4,7 +4,7 @@
 //
 //  Created by Rokid on 2021/8/12.
 //  联系人列表 cell
-import RKUtils
+import RKIUtils
 
 enum CellState: Int {
     case offline        = 0 // 离线

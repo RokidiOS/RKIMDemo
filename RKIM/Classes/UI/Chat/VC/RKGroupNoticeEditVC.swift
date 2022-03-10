@@ -7,10 +7,10 @@
 
 import Foundation
 import RKIMCore
-import RKBaseView
+import RKIBaseView
 import IQKeyboardManager
 import UIKit
-import RKHandyJSON
+import RKIHandyJSON
 
 class RKGroupNoticeEditVC: RKBaseViewController {
     var groupInfo = RKIMGroup() {

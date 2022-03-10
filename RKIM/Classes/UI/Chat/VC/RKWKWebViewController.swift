@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-import RKBaseView
+import RKIBaseView
 
 class RKWKWebViewController: RKBaseViewController {
 
@@ -68,11 +68,11 @@ class RKWKWebViewController: RKBaseViewController {
 
 extension RKWKWebViewController: WKNavigationDelegate {
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    @nonobjc func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
     }
     
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    @nonobjc func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print(error)
     }
     

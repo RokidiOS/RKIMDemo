@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RKUtils
+import RKIUtils
 
 class RKFileTool: NSObject {
     static let shareManager = RKFileTool()

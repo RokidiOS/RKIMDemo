@@ -9,7 +9,7 @@ import UIKit
 import RKIMCore
 import Kingfisher
 import SnapKit
-import RKBaseView
+import RKIBaseView
 
 class RKUserDetailInfoViewController: RKBaseViewController {
 

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RKUtils
+import RKIUtils
 
 class RKAddressBookGroupListCell: UITableViewCell {
     // 头像

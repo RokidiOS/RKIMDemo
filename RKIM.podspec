@@ -35,7 +35,7 @@ TODO: Add long description of the pod here.
   ]
   
   s.dependency 'Moya', '~> 13.0.1'
-  s.dependency 'RKHandyJSON'
+  s.dependency 'RKIHandyJSON'
   s.dependency 'Kingfisher', '~>4.10.1'
   s.dependency 'SnapKit', '~> 4.2.0'
   s.dependency 'Then', '~> 2.7.0'

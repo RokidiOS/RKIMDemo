@@ -7,10 +7,10 @@
 
 import Foundation
 import SnapKit
-import RKUtils
+import RKIUtils
 import RKIMCore
 import UIKit
-import RKBaseView
+import RKIBaseView
 
 
 class RKChatTxtCell: RKChatDetailCell {

@@ -7,7 +7,7 @@
 
 import Foundation
 import RKIMCore
-import RKBaseView
+import RKIBaseView
 
 class RKInviteVC: UIViewController {
     var groupID: String?

@@ -6,9 +6,9 @@
 //  聊天详情cell 基类
 
 import Foundation
-import RKUtils
+import RKIUtils
 import Then
-import RKBaseView
+import RKIBaseView
 import SnapKit
 import RKIMCore
 import UIKit

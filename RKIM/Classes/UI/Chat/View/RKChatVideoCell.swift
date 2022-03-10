@@ -11,7 +11,7 @@ import RKIMCore
 import Kingfisher
 import MediaPlayer
 import AVKit
-import RKLogger
+import RKILogger
 import JXPhotoBrowser
 
 class RKChatVideoCell: RKChatDetailCell {

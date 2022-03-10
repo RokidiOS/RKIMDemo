@@ -6,9 +6,9 @@
 //  群组列表控制器
 
 import Foundation
-import RKHandyJSON
-import RKBaseView
-import RKUtils
+import RKIHandyJSON
+import RKIBaseView
+import RKIUtils
 import RKIMCore
 
 class RKAddressBookGroupViewController: RKBaseViewController {

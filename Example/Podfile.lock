@@ -43,7 +43,6 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
   - Result (4.1.0)
-  - RKHandyJSON (0.1.0)
   - RKIBaseView (0.1.2):
     - RKILogger
     - RKIUtils
@@ -56,8 +55,8 @@ PODS:
     - Kingfisher (~> 4.10.1)
     - LookinServer
     - Moya (~> 13.0.1)
-    - RKHandyJSON
     - RKIBaseView
+    - RKIHandyJSON
     - RKIMCore
     - RKLogger
     - SnapKit (~> 4.2.0)
@@ -108,7 +107,6 @@ SPEC REPOS:
     - LookinServer
     - Moya
     - Result
-    - RKHandyJSON
     - RKIHandyJSON
     - RKILogger
     - RKIUtils
@@ -153,11 +151,10 @@ SPEC CHECKSUMS:
   LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RKHandyJSON: 5c7764a399232b87ecabff442d7a738eee9ba4bb
   RKIBaseView: 3e27b7e12a64b3918b1201fa0dcc9ef571ae2b48
   RKIHandyJSON: b3928e42af5d7d3b4cefb686079093d130e9066e
   RKILogger: acb89cf527cde1f6e21425438338f6d1e49873f4
-  RKIM: 122ee052d507086bc6c30d7300d279163e9dd2fe
+  RKIM: a6f674801681acfbb37355108ac6a62af27f70ac
   RKIMCore: 2f6b0ad46cd490a8f10b05f5113f35c0e539fdce
   RKIUtils: 0170015917b7208cef4491421afe6cce74f2cb7c
   RKLogger: 69b28e27e5b3f6892ed2732834624ec5608d61ee

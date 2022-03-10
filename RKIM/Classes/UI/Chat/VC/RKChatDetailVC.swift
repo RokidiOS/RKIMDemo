@@ -6,14 +6,14 @@
 //  聊天详情
 
 import Foundation
-import RKUtils
-import RKBaseView
+import RKIUtils
+import RKIBaseView
 import Then
 import UIKit
 import Kingfisher
 import IQKeyboardManager
-import RKHandyJSON
-import RKLogger
+import RKIHandyJSON
+import RKILogger
 //import RKImagePicker
 import TZImagePickerController
 import MobileCoreServices

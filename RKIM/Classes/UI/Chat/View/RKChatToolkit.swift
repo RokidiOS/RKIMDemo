@@ -8,7 +8,7 @@
 
 import UIKit
 import AVKit
-import RKUtils
+import RKIUtils
 
 class RKChatToolkit: NSObject {
     class func getNavi() -> UINavigationController? {
