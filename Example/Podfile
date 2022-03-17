@@ -16,8 +16,7 @@ target 'RKIM_Example' do
   pod 'RKIBaseView', :git => gitUrl("RKBaseView")
   pod 'RKIUtils'
   pod 'RKIHandyJSON'
-  pod 'RKIMCore',  :path => '/Users/chzy/Desktop/Rokid/custom/RKIMCore'
-  # :git => gitUrl("RKIMCore")
+  pod 'RKIMCore',  :git => gitUrl("RKIMCore")
   
   
   pod 'LookinServer', :configurations => ['Debug']
