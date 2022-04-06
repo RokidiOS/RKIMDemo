@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AudioManager.shared.openBackgroundAudioAutoPlay = true
         RKIMDBManager.initDB()
         configDoraemon()
+        window?.backgroundColor = .white
         return true
     }
 

@@ -22,11 +22,12 @@ open class RKChatListVC: RKBaseViewController {
     }
     
     open override func viewDidLoad() {
-       super.viewDidLoad()
-       title = "消息"
-       RKIMManager.share.addDelegate(newDelegate: self)
-       loadData()
-       setupRightNavBarItem()
+        super.viewDidLoad()
+        self.edgesForExtendedLayout = .bottom
+        title = "消息"
+        RKIMManager.share.addDelegate(newDelegate: self)
+        loadData()
+        setupRightNavBarItem()
     }
     
     func loadData(_ isNeedLoadNet: Bool = true) {
@@ -63,17 +64,17 @@ open class RKChatListVC: RKBaseViewController {
         view.addSubview(tableView)
         view.addSubview(searchTextField)
         searchTextField.snp.makeConstraints { make in
-            make.top.equalTo(10)
+            make.top.equalToSuperview()
             make.left.equalTo(16)
             make.right.equalTo(-16)
             make.centerX.equalToSuperview()
             make.height.equalTo(38)
         }
        
-       tableView.snp.makeConstraints { make in
-           make.top.equalTo(searchTextField.snp_bottom).offset(10)
-           make.bottom.left.right.equalTo(view)
-       }
+//       tableView.snp.makeConstraints { make in
+//           make.top.equalTo(searchTextField.snp_bottom).offset(10)
+//           make.bottom.left.right.equalTo(view)
+//       }
     }
     
     open override func setupLeftNavBarItem() {}
@@ -234,6 +235,7 @@ extension RKChatListVC: UITableViewDelegate {
         chatDetailVC.groupId = group.groupId
         chatDetailVC.groupInfo = group
         chatDetailVC.groupMemberCount = group.userList.count
+        chatDetailVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(chatDetailVC, animated: true)
     }
 }

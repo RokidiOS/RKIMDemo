@@ -36,9 +36,9 @@ open class RKContactListVC: UIViewController {
         
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "联系人"
+        edgesForExtendedLayout = .bottom
+        navigationItem.title = "联系人"
         addressBookListView.delegate = self
-        
         view.addSubview(searchTextField)
         searchTextField.snp.makeConstraints { make in
             make.top.equalTo(10)
@@ -51,7 +51,7 @@ open class RKContactListVC: UIViewController {
         
         view.addSubview(addressBookListView)
         addressBookListView.snp.makeConstraints { make in
-            make.bottom.left.right.equalTo(view)
+            make.bottom.left.right.equalToSuperview()
             make.top.equalTo(searchTextField.snp_bottom).offset(10)
         }
         loadGroupData()
@@ -180,7 +180,7 @@ extension RKContactListVC: UITableViewDelegate {
             // 群组
             let addressBookGroupVC = RKAddressBookGroupViewController()
             addressBookGroupVC.contactGroups = selfGroupModel
-            
+            addressBookGroupVC.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(addressBookGroupVC, animated: true)
             
         } else {

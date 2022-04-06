@@ -12,9 +12,9 @@ import Kingfisher
 import UIKit
 import RKIMCore
 
-protocol AddressBookListViewDeleagte: NSObjectProtocol {
+@objc protocol AddressBookListViewDeleagte: NSObjectProtocol {
     // MARK: - 呼叫按钮回调
-    func click(_ index: Int)
+   func click(_ index: Int)
 }
 
 open class RKAddressBookListView: RKBaseTableView {
