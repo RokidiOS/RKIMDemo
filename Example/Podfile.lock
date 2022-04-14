@@ -42,6 +42,7 @@ PODS:
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
+  - OptimizedSQLCipher (1.2.2)
   - Result (4.1.0)
   - RKIBaseView (0.1.2):
     - RKILogger
@@ -63,16 +64,18 @@ PODS:
     - Then (~> 2.7.0)
     - TZImagePickerController
     - WCDB.swift
-  - RKIMCore (0.1.1):
-    - Moya (~> 13.0.1)
+  - RKIMCore (0.1.2):
+    - Moya
     - RKIHandyJSON
     - RKILogger
     - RKIUtils
     - RKSocket
-    - WCDB.swift
+    - WCDBSwift
   - RKIUtils (0.1.2)
   - RKSocket (0.1.0)
   - SnapKit (4.2.0)
+  - SQLiteRepair (1.2.2):
+    - OptimizedSQLCipher
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - Then (2.7.0)
@@ -81,6 +84,9 @@ PODS:
     - SQLiteRepairKit (~> 1.2.0)
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDBOptimizedSQLCipher (1.2.1)
+  - WCDBSwift (1.0.2):
+    - OptimizedSQLCipher
+    - SQLiteRepair
 
 DEPENDENCIES:
   - DoraemonKit
@@ -89,7 +95,7 @@ DEPENDENCIES:
   - RKIHandyJSON
   - RKILogger
   - RKIM (from `../`)
-  - RKIMCore (from `/Users/chzy/Desktop/Rokid/custom/RKIMCore`)
+  - RKIMCore (from `https://github.com/RokidiOS/RKIMCore`)
   - RKIUtils
   - RKSocket (from `https://github.com/RokidiOS/RKSocket`)
 
@@ -105,16 +111,19 @@ SPEC REPOS:
     - Kingfisher
     - LookinServer
     - Moya
+    - OptimizedSQLCipher
     - Result
     - RKIHandyJSON
     - RKILogger
     - RKIUtils
     - SnapKit
+    - SQLiteRepair
     - SQLiteRepairKit
     - Then
     - TZImagePickerController
     - WCDB.swift
     - WCDBOptimizedSQLCipher
+    - WCDBSwift
 
 EXTERNAL SOURCES:
   RKIBaseView:
@@ -122,7 +131,7 @@ EXTERNAL SOURCES:
   RKIM:
     :path: "../"
   RKIMCore:
-    :path: "/Users/chzy/Desktop/Rokid/custom/RKIMCore"
+    :git: https://github.com/RokidiOS/RKIMCore
   RKSocket:
     :git: https://github.com/RokidiOS/RKSocket
 
@@ -130,6 +139,9 @@ CHECKOUT OPTIONS:
   RKIBaseView:
     :commit: 3a2558dd67075deb16915cc1ef907ed9df0a2b33
     :git: https://github.com/RokidiOS/RKBaseView
+  RKIMCore:
+    :commit: 5173b460b66a4f2bd3ace2b3a9a41b7e88230614
+    :git: https://github.com/RokidiOS/RKIMCore
   RKSocket:
     :commit: df8726a2b8275464516b8af342fb52934e144722
     :git: https://github.com/RokidiOS/RKSocket
@@ -145,21 +157,24 @@ SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  OptimizedSQLCipher: 92a1bf5cc94139e1da49de9c883ff9891bcd2a37
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RKIBaseView: 3e27b7e12a64b3918b1201fa0dcc9ef571ae2b48
   RKIHandyJSON: b3928e42af5d7d3b4cefb686079093d130e9066e
   RKILogger: acb89cf527cde1f6e21425438338f6d1e49873f4
   RKIM: 2715132248a34c779cce6be32618e1426e8d7cbb
-  RKIMCore: c32c269b8420c04541395f4b82be7237ae41ac26
+  RKIMCore: f880ada44892892485eedeea1322571062b336c8
   RKIUtils: 0170015917b7208cef4491421afe6cce74f2cb7c
   RKSocket: 325bffa5c1c87851fce39b656db0912975ff0909
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SQLiteRepair: 65ac4472667ac8cdeb93c3765f2fcae4dd259204
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   TZImagePickerController: fb446ac06ae9c217bc849185646a68465bcd0dd4
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
+  WCDBSwift: 6687dc2d4bebce2b237017ca367730f5f8409e67
 
-PODFILE CHECKSUM: 91283371ac3fae47d379e6914450b8b8b6a35341
+PODFILE CHECKSUM: 0dc053520308030115763bde282f119a26024516
 
 COCOAPODS: 1.11.2
