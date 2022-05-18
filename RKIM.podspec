@@ -28,13 +28,13 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'git@gitlab.rokid-inc.com:xr_app_platform/ios/component/rkim.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   s.swift_version = '5.0'
   s.source_files = [
   'RKIM/Classes/**/*'
   ]
   
-  s.dependency 'Moya', '~> 13.0.1'
+  s.dependency 'Moya'
   s.dependency 'RKIHandyJSON'
   s.dependency 'Kingfisher', '~>4.10.1'
   s.dependency 'SnapKit', '~> 4.2.0'

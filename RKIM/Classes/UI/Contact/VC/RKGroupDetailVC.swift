@@ -7,7 +7,6 @@
 
 import Foundation
 import RKIBaseView
-import Result
 import RKIHandyJSON
 import RKIMCore
 import UIKit
@@ -66,6 +65,24 @@ class RKGroupdDetailVC: RKBaseViewController {
 }
 
 extension RKGroupdDetailVC: AddressBookListViewDeleagte {
+    func singleClick(_ index: Int) {
+        let user = KContacts[index]
+        RKIMManager.share.createSingleChatGroup(userList: user.userId) { isSuccess, errorMessage, result in
+            if isSuccess {
+                if let dict = result as? [String: Any] ,let sigleGroupID = dict["groupId"] as? String{
+                    let detailVC = RKChatDetailVC()
+                    detailVC.isSingleChat = false
+                    detailVC.groupId = sigleGroupID
+                    detailVC.title = user.realName
+                    detailVC.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                }
+            } else {
+                RKToast.show(withText: "创建单聊失败", duration: 1, in: self.view)
+            }
+        }
+    }
+    
     func click(_ index: Int) {
         if self.action == .members {
             

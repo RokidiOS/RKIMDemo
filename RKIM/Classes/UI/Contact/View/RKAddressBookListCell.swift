@@ -33,6 +33,13 @@ class RKAddressBookListCell: UITableViewCell {
     // 底部横线
     var lineView: UIView!
     // 状态
+    var singleChatBtn: UIButton!
+    
+    var singleClickAction:(() ->Void)?
+    @objc func singleClick() {
+        singleClickAction?()
+    }
+    
     var cellState: CellState = .offline {
         didSet {
             switch cellState {
@@ -108,6 +115,12 @@ class RKAddressBookListCell: UITableViewCell {
         lineView = UIView.init()
         lineView.backgroundColor = UIColor(hex: 0xF3F3F3)
         self.contentView.addSubview(lineView)
+        
+        singleChatBtn = UIButton()
+        singleChatBtn.setImage(UIImage(named: "msg_selected"), for: .normal)
+        self.contentView.addSubview(singleChatBtn)
+        singleChatBtn.addTarget(self, action: #selector(singleClick), for: .touchUpInside)
+        layout()
     }
     
     func getStateAttributedText(_ text: String) -> NSMutableAttributedString {
@@ -121,9 +134,8 @@ class RKAddressBookListCell: UITableViewCell {
         super.init(coder: coder)
     }
     
-    override func layoutSubviews() {
+    func layout() {
         super.layoutSubviews()
-        
         avatarImageButton.snp.makeConstraints { (make) in
             make.size.equalTo(44)
             make.left.equalTo(20)
@@ -162,5 +174,12 @@ class RKAddressBookListCell: UITableViewCell {
             make.bottom.equalToSuperview()
             make.height.equalTo(1)
         }
+        
+        singleChatBtn.snp.makeConstraints { make in
+            make.right.equalTo(pickImageView.snp_left).offset(-10)
+            make.size.equalTo(CGSize(width: 50, height: 50))
+            make.centerY.equalToSuperview()
+        }
+        
     }
 }

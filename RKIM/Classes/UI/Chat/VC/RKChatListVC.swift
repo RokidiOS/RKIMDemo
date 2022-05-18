@@ -71,10 +71,10 @@ open class RKChatListVC: RKBaseViewController {
             make.height.equalTo(38)
         }
        
-//       tableView.snp.makeConstraints { make in
-//           make.top.equalTo(searchTextField.snp_bottom).offset(10)
-//           make.bottom.left.right.equalTo(view)
-//       }
+       tableView.snp.makeConstraints { make in
+           make.top.equalTo(searchTextField.snp_bottom).offset(10)
+           make.bottom.left.right.equalTo(view)
+       }
     }
     
     open override func setupLeftNavBarItem() {}
@@ -231,10 +231,19 @@ extension RKChatListVC: UITableViewDelegate {
                 self?.loadData(isSuccess)
             }
         }
-        chatDetailVC.title = group.groupName
+        
         chatDetailVC.groupId = group.groupId
         chatDetailVC.groupInfo = group
         chatDetailVC.groupMemberCount = group.userList.count
+        
+        let otherUser = group.userList.first { user in
+           return !user.isSelf
+        }
+        if group.groupType == .singleGroup, let otherUser = otherUser {
+            chatDetailVC.title = otherUser.realName
+        } else {
+            chatDetailVC.title = group.groupName
+        }
         chatDetailVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(chatDetailVC, animated: true)
     }

@@ -113,15 +113,26 @@ class RKChatListCell: RKBaseCell {
     }
      
     func setModel(_ model: RKIMGroup) {
-        titleLabel.text = model.groupName.replacingOccurrences(of: "的技术支持", with: "")
-        let message = model.lastMessage
-        
-        if let groupAvatars = model.groupAvatars {
-            avatarImageView.kf.setImage(with: URL(string: groupAvatars), placeholder: nil)
+       
+        if model.groupType == .singleGroup {
+            let otherUser = model.userList.first { user in
+               return !user.isSelf
+            }
+            if let otherUser = otherUser {
+                titleLabel.text = otherUser.realName
+                let groupAvatars = otherUser.headPortrait
+                avatarImageView.kf.setImage(with: URL(string: groupAvatars), placeholder: nil)
+            }
         } else {
-            avatarImageView.image = nil
+            titleLabel.text = model.groupName.replacingOccurrences(of: "的技术支持", with: "")
+            if let groupAvatars = model.groupAvatars {
+                avatarImageView.kf.setImage(with: URL(string: groupAvatars), placeholder: nil)
+            } else {
+                avatarImageView.image = nil
+            }
         }
-
+        
+        let message = model.lastMessage
         unreadLabel.text = model.unReadCount > 99 ? "99+" : "\(model.unReadCount)"
         unreadView.isHidden = model.unReadCount == 0
         
@@ -159,7 +170,7 @@ class RKChatListCell: RKBaseCell {
         }
 
         lastMessageLabel.text = name + " : " + messageDetail
-
+       
     }
 
 }

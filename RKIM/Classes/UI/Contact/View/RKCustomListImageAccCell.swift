@@ -24,14 +24,14 @@ class RKCustomListImageAccCell: RKCustomListAccCell {
     }
     
     override func layoutSubviews() {
-        
-        iconImageView.snp.makeConstraints { (make) in
+        super.layoutSubviews()
+        iconImageView.snp.remakeConstraints { (make) in
             make.left.equalTo(20)
             make.centerY.equalToSuperview()
             make.size.equalTo(44)
         }
         
-        titleLabel.snp.makeConstraints { (make) in
+        titleLabel.snp.remakeConstraints { (make) in
             make.top.height.equalToSuperview()
             make.left.equalTo(iconImageView.snp_right).offset(10)
             make.width.equalTo(140)
@@ -43,17 +43,18 @@ class RKCustomListImageAccCell: RKCustomListAccCell {
             make.right.equalTo(accImageView.snp_left)
         }
         
-        accImageView.snp.makeConstraints { (make) in
+        accImageView.snp.remakeConstraints { (make) in
             make.right.equalTo(-20)
             make.centerY.equalToSuperview()
             make.size.equalTo(20)
         }
         
-        lineView.snp.makeConstraints { (make) in
+        lineView.snp.remakeConstraints { (make) in
             make.left.equalTo(20)
             make.right.equalTo(-20)
             make.bottom.equalToSuperview()
             make.height.equalTo(1)
         }
+        
     }
 }

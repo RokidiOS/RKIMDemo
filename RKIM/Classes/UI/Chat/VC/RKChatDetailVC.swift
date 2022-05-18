@@ -303,6 +303,8 @@ public class RKChatDetailVC: RKBaseViewController {
     }()
     
     var groupId: String? /// 群组id
+    /// 是否是单聊
+    var isSingleChat: Bool = true
     var groupInfo: RKIMGroup?//群组信息
     var groupMemberCount = 1 /// 群组人数
     private var firstMessageTms = 0 ///第一条的时间戳
@@ -377,17 +379,21 @@ public class RKChatDetailVC: RKBaseViewController {
         DBHelper.asyGroup(groupID) { model in
             if let model = model {
                 var array = [infoActio, historyAction,changeGroupNameAction, inviteAction, memberAction]
-                if model.ownerId == DemoUserCenter.userInfo.userId {
+                if model.groupType == .singleGroup {
+                    array.append(historyAction)
+                } else if model.ownerId == DemoUserCenter.userInfo.userId {
                     array.append(reOwnerAction)
                     array.append(removeAction)
                     array.append(dismissAction)
                 } else {
                     array.append(exitAction)
                 }
+                
                 array.append(cancelAction)
                 for action in array {
                     alertVC.addAction(action)
                 }
+
                 self.present(alertVC, animated: true, completion: nil)
                 
             }

@@ -36,3 +36,4 @@ Example/Carthage/Build
 #
 Example/Pods/
 Example/fastlane/
+Example/Fastfile

@@ -15,6 +15,8 @@ import RKIMCore
 @objc protocol AddressBookListViewDeleagte: NSObjectProtocol {
     // MARK: - 呼叫按钮回调
    func click(_ index: Int)
+    
+    func singleClick(_ index: Int)
 }
 
 open class RKAddressBookListView: RKBaseTableView {
@@ -131,7 +133,9 @@ extension RKAddressBookListView: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RKAddressBookListCell.classForCoder())) as! RKAddressBookListCell
-            
+            cell.singleClickAction = { [weak self] in
+                self?.listViewDeleagte?.singleClick(indexPath.row)
+            }
             cell.pickImageView.isHidden = !enableSelected
             
             let nameStr = contactInfoModel.realName

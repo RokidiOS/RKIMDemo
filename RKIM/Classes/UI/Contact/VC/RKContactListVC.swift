@@ -14,11 +14,13 @@ import WCDBSwift
 import RKIMCore
 import MapKit
 
+var KContacts: [RKIMUser] = []
 open class RKContactListVC: UIViewController {
     // 联系人列表
     var selfContacts: [RKIMUser] = [RKIMUser()]{
         didSet {
             self.addressBookListView.dataList = selfContacts
+            KContacts = selfContacts
         }
     }
     // 群组列表
@@ -84,6 +86,7 @@ open class RKContactListVC: UIViewController {
                 RKToast.show(withText: "创建群组失败", duration: 1, in: self.view)
             }
         })
+    
     }
     
     @objc private func textFieldDidChange() {
