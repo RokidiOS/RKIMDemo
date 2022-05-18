@@ -9,12 +9,12 @@
 import Foundation
 import Alamofire
 
-enum EnvType {
+public enum EnvType {
     case test
     case develop
     case product
     
-    func sassURl() ->String {
+   public func sassURl() ->String {
         switch self {
         case .test:
             return "https://saas-ar-test.rokid.com"
@@ -25,7 +25,7 @@ enum EnvType {
         }
     }
     
-    func imURl() ->String {
+   public func imURl() ->String {
         switch self {
         case .test:
             return "https://im-test.rokid-inc.com/business/"
@@ -36,7 +36,7 @@ enum EnvType {
         }
     }
     
-    func socketURl() ->String {
+   public func socketURl() ->String {
         switch self {
         case .test:
             return "wss://im-testwss.rokid-inc.com/ws/"
@@ -46,16 +46,16 @@ enum EnvType {
             return "wss://im-wss.rokid.com/ws/"
         }
     }
-    
+
 }
 
-let env = EnvType.product
+public var env = EnvType.develop
 
 public class LoginHelper: NSObject {
     
     static let kurlPrex = env.sassURl()
     static let ktokenPrex = "Bearer "
-    class func loginAction(companyID: String?, userName: String?, password: String?, compeletBlock:@escaping (_ uid: String?, _ token: String?, _ errorMsg: String?) ->Void) {
+    public class func loginAction(companyID: String?, userName: String?, password: String?, compeletBlock:@escaping (_ uid: String?, _ token: String?, _ errorMsg: String?) ->Void) {
         guard let userName = userName else {
             compeletBlock(nil, nil, "请输入用户名")
             return
@@ -74,11 +74,11 @@ public class LoginHelper: NSObject {
         loginData["scope"] = "server"
         
         let url = kurlPrex + "/api/auth/oauth/token"
-        var headers: [String: String] = [:]
-        headers["Accept-Language"] = "zh-CN"
-        headers["Content-Type"] = "application/json"
+        var headers = HTTPHeaders()
+        headers.add(name: "Accept-Language", value: "zh-CN")
+        headers.add(name: "Content-Type", value: "application/json")
         
-        let req = Alamofire.request(url, method: .post, parameters: loginData, encoding: JSONEncoding.default, headers: headers)
+        let req = AF.request(url, method: .post, parameters: loginData, encoding: JSONEncoding.default, headers: headers)
         req.response(queue: .main) { response in
             guard let data = response.data else { return }
             do {
@@ -99,15 +99,17 @@ public class LoginHelper: NSObject {
         }
     }
     
-    class func getUserInfo(_ token: String, compelet:@escaping([String: Any]?, Bool) ->Void) {
+    public class func getUserInfo(_ token: String, compelet:@escaping([String: Any]?, Bool) ->Void) {
         let url = kurlPrex + "/api/upms/v1/deviceUser/getDeviceUserLoginInfo"
-        var headers: [String: String] = [:]
-        headers["Accept-Language"] = "zh-CN"
-        headers["Content-Type"] = "application/json"
-        headers["Authorization"] = ktokenPrex + token
-        let req = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+        var headers = HTTPHeaders()
+        headers.add(name: "Accept-Language", value: "zh-CN")
+        headers.add(name: "Authorization", value: ktokenPrex + token)
+        let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
         req.response(queue: .main) { response in
-            guard let data = response.data else { return }
+            guard let data = response.data else {
+                compelet(nil, false)
+                return
+            }
             do {
               let json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
                 if let dic = json as? [String: Any] {
@@ -117,8 +119,8 @@ public class LoginHelper: NSObject {
                 }
             } catch let error {
               print(error)
+              compelet(nil, false)
             }
-           compelet(nil, false)
         }
     }
 
