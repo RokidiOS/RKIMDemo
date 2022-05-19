@@ -66,7 +66,7 @@ class RKGroupdDetailVC: RKBaseViewController {
 
 extension RKGroupdDetailVC: AddressBookListViewDeleagte {
     func singleClick(_ index: Int) {
-        let user = KContacts[index]
+        let user = dataList[index]
         RKIMManager.share.createSingleChatGroup(userList: user.userId) { isSuccess, errorMessage, result in
             if isSuccess {
                 if let dict = result as? [String: Any] ,let sigleGroupID = dict["groupId"] as? String{

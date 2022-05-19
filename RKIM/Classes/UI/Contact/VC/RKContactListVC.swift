@@ -140,6 +140,7 @@ open class RKContactListVC: UIViewController {
     
     lazy var addressBookListView: RKAddressBookListView = {
         let adView =  RKAddressBookListView(frame: view.bounds, style: .plain)
+        adView.listViewDeleagte = self
         adView.enableGroup = true
         return adView
     }()
@@ -222,4 +223,30 @@ extension RKContactListVC: UITextFieldDelegate {
         return true
     }
  
+}
+
+extension RKContactListVC: AddressBookListViewDeleagte {
+    func click(_ index: Int) {
+        
+    }
+    
+    func singleClick(_ index: Int) {
+        let user = KContacts[index - 1]
+        RKIMManager.share.createSingleChatGroup(userList: user.userId) { isSuccess, errorMessage, result in
+            if isSuccess {
+                if let dict = result as? [String: Any] ,let sigleGroupID = dict["groupId"] as? String{
+                    let detailVC = RKChatDetailVC()
+                    detailVC.isSingleChat = false
+                    detailVC.groupId = sigleGroupID
+                    detailVC.title = user.realName
+                    detailVC.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                }
+            } else {
+                RKToast.show(withText: "创建单聊失败", duration: 1, in: self.view)
+            }
+        }
+    }
+    
+    
 }

@@ -10,6 +10,7 @@ import UIKit
 import RKIM
 import DoraemonKit
 import RKIMCore
+import RKILogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         RKIMDBManager.initDB()
         configDoraemon()
         window?.backgroundColor = .white
+        RKLogMgr.shared.logLevel = .verbose
         return true
     }
 
