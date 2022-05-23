@@ -31,6 +31,9 @@ open class RKAddressBookListView: RKBaseTableView {
     // 默认不允许选择
     var enableSelected = false
     
+    // 是否显示私聊按钮
+    var showChatBtn = false
+    
     // 联系人分组
     var contactGroups: [RKIMGroup?] = [] {
         didSet {
@@ -133,9 +136,15 @@ extension RKAddressBookListView: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RKAddressBookListCell.classForCoder())) as! RKAddressBookListCell
-            cell.singleClickAction = { [weak self] in
-                self?.listViewDeleagte?.singleClick(indexPath.row)
+            if showChatBtn {
+                cell.singleClickAction = { [weak self] in
+                    self?.listViewDeleagte?.singleClick(indexPath.row)
+                }
+            } else {
+                cell.singleClickAction = nil
+                cell.singleChatBtn.isHidden = true
             }
+           
             cell.pickImageView.isHidden = !enableSelected
             
             let nameStr = contactInfoModel.realName

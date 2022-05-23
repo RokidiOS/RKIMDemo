@@ -142,8 +142,10 @@ open class RKContactListVC: UIViewController {
         let adView =  RKAddressBookListView(frame: view.bounds, style: .plain)
         adView.listViewDeleagte = self
         adView.enableGroup = true
+        adView.showChatBtn = true
         return adView
     }()
+    
     private lazy var searchedContactList: [RKIMUser] = []
     private lazy var searchText = ""
     private lazy var searchTextField: UITextField = {
@@ -236,7 +238,7 @@ extension RKContactListVC: AddressBookListViewDeleagte {
             if isSuccess {
                 if let dict = result as? [String: Any] ,let sigleGroupID = dict["groupId"] as? String{
                     let detailVC = RKChatDetailVC()
-                    detailVC.isSingleChat = false
+                    detailVC.isSingleChat = true
                     detailVC.groupId = sigleGroupID
                     detailVC.title = user.realName
                     detailVC.hidesBottomBarWhenPushed = true

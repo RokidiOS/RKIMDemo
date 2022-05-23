@@ -380,7 +380,7 @@ public class RKChatDetailVC: RKBaseViewController {
             if let model = model {
                 var array = [infoActio, historyAction,changeGroupNameAction, inviteAction, memberAction]
                 if model.groupType == .singleGroup {
-                    array.append(historyAction)
+                    array = [historyAction]
                 } else if model.ownerId == DemoUserCenter.userInfo.userId {
                     array.append(reOwnerAction)
                     array.append(removeAction)
