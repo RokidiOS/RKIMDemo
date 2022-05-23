@@ -16,7 +16,7 @@ import RKIMCore
     // MARK: - 呼叫按钮回调
    func click(_ index: Int)
     
-    func singleClick(_ index: Int)
+    func singleClick(_ userId: String)
 }
 
 open class RKAddressBookListView: RKBaseTableView {
@@ -138,7 +138,7 @@ extension RKAddressBookListView: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RKAddressBookListCell.classForCoder())) as! RKAddressBookListCell
             if showChatBtn {
                 cell.singleClickAction = { [weak self] in
-                    self?.listViewDeleagte?.singleClick(indexPath.row)
+                    self?.listViewDeleagte?.singleClick(contactInfoModel.userId)
                 }
             } else {
                 cell.singleClickAction = nil

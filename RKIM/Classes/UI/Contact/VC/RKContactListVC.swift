@@ -232,15 +232,15 @@ extension RKContactListVC: AddressBookListViewDeleagte {
         
     }
     
-    func singleClick(_ index: Int) {
-        let user = KContacts[index - 1]
-        RKIMManager.share.createSingleChatGroup(userList: user.userId) { isSuccess, errorMessage, result in
+    func singleClick(_ userId: String) {
+        
+        RKIMManager.share.createSingleChatGroup(userList: userId) { isSuccess, errorMessage, result in
             if isSuccess {
                 if let dict = result as? [String: Any] ,let sigleGroupID = dict["groupId"] as? String{
                     let detailVC = RKChatDetailVC()
                     detailVC.isSingleChat = true
                     detailVC.groupId = sigleGroupID
-                    detailVC.title = user.realName
+                    detailVC.title = userId.userName()
                     detailVC.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(detailVC, animated: true)
                 }

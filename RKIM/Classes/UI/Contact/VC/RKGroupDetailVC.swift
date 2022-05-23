@@ -65,25 +65,18 @@ class RKGroupdDetailVC: RKBaseViewController {
 }
 
 extension RKGroupdDetailVC: AddressBookListViewDeleagte {
-    func singleClick(_ index: Int) {
-        let user = dataList[index]
-        RKIMManager.share.createSingleChatGroup(userList: user.userId) { isSuccess, errorMessage, result in
-            if isSuccess {
-                if let dict = result as? [String: Any] ,let sigleGroupID = dict["groupId"] as? String{
-                    let detailVC = RKChatDetailVC()
-                    detailVC.isSingleChat = false
-                    detailVC.groupId = sigleGroupID
-                    detailVC.title = user.realName
-                    detailVC.hidesBottomBarWhenPushed = true
-                    self.navigationController?.pushViewController(detailVC, animated: true)
-                }
-            } else {
-                RKToast.show(withText: "创建单聊失败", duration: 1, in: self.view)
-            }
-        }
+    func singleClick(_ userId: String) {
+    
     }
     
     func click(_ index: Int) {
+        guard index < dataList.count else {
+            RKToast.show(withText: "操作失败", in:view)
+            guard let groupID = groupID else { return }
+            loadGourpUser(groupID)
+            return
+        }
+        
         if self.action == .members {
             
             let infoVC =  RKUserDetailInfoViewController()
@@ -99,11 +92,11 @@ extension RKGroupdDetailVC: AddressBookListViewDeleagte {
             let doneAction = UIAlertAction(title: "确定", style: .default) { _ in
                 self.takeAction(userId)
             }
-            let cancelAction = UIAlertAction(title: "取消", style: .destructive) { _ in
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel) { _ in
                 alerControll.dismiss(animated: true, completion: nil)
             }
-            alerControll.addAction(doneAction)
             alerControll.addAction(cancelAction)
+            alerControll.addAction(doneAction)
             present(alerControll, animated: true, completion: nil)
 
         }
