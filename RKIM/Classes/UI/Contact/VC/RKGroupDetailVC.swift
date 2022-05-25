@@ -51,7 +51,7 @@ class RKGroupdDetailVC: RKBaseViewController {
     func loadGourpUser(_ groupId: String) {
         RKIMManager.share.groupMemberList(groupID: groupId) { isSuccess, errorMessage, contacts in
             guard let contacts = contacts else { return }
-            self.addressBookListView.dataList = contacts
+            self.dataList = contacts
         }
     }
     
