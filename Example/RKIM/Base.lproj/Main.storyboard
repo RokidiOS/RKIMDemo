@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,7 +66,6 @@
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="1rd-QU-dE9" secondAttribute="bottom" constant="20" id="4mf-zr-rdv"/>
                             <constraint firstItem="Paw-OL-0TB" firstAttribute="top" secondItem="w3B-h4-Wdy" secondAttribute="bottom" constant="66" id="D9B-xv-wcJ"/>
-                            <constraint firstItem="w3B-h4-Wdy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="Kga-Hf-Jp7"/>
                             <constraint firstItem="w3B-h4-Wdy" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="WkW-yH-5yp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Paw-OL-0TB" secondAttribute="trailing" constant="50" id="Xcn-wf-KbH"/>
                             <constraint firstItem="1rd-QU-dE9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="YY7-Uy-ZdX"/>
@@ -164,7 +163,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KFU-9L-Ora">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -184,7 +182,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cg7-wQ-Dyg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

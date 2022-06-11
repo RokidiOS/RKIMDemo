@@ -17,7 +17,7 @@ extension String {
     func userName() ->String? {
         for user in KContacts {
             if user.userId == self {
-                return user.realName
+                return user.realName.isEmpty ? user.username : user.realName
             }
         }
         return nil

@@ -14,6 +14,22 @@ class RKChatSystemCell: UITableViewCell {
 
     func setModel(_ message: RKIMMessage, _ showTime: Bool = true) {
         infoLb.text = message.messageDetailModel?.content
+        var names = ""
+        if let userIdList = message.messageDetailModel?.userIdList {
+           let nameArray = userIdList.map{ (id) -> String in
+               return id.userName() ?? ""
+            }
+            names = nameArray.joined(separator: "、")
+        }
+        
+        if message.messageDetailModel?.systemType == .InvitGroup {
+            infoLb.text = names + "被邀请入群"
+        }
+        
+        if message.messageDetailModel?.systemType == .RmoveGroup {
+            infoLb.text = names + "被踢出群"
+        }
+      
         timeLabel.text = message.messageDetailModel?.duration
         
         timeLabel.isHidden = !showTime
@@ -31,7 +47,8 @@ class RKChatSystemCell: UITableViewCell {
         infoLb.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(timeLabel.snp_bottom)
-            make.height.equalTo(16)
+            make.width.equalToSuperview().offset(-30)
+//            make.height.equalTo(16)
             make.bottom.equalTo(-4)
         }
         
@@ -58,6 +75,7 @@ class RKChatSystemCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .center
         label.textColor = UIColor(hex: 0x999999)
+        label.numberOfLines = 0
         label.setContentHuggingPriority(.required, for: .horizontal)
         return label
     }()

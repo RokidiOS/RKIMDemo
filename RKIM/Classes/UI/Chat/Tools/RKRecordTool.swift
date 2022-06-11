@@ -147,11 +147,11 @@ class RKRecordTool: NSObject {
         seconds += 1
         lastDuration = seconds
         if seconds >= maxDuration {
+            stopRecord()
             if let autoFinishBlock = autoFinishBlock {
                 autoFinishBlock()
                 self.autoFinishBlock = nil
             }
-            stopRecord()
         }
     }
     
