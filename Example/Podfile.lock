@@ -44,12 +44,12 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
-  - RKIBaseView (0.1.2):
+  - RKIBaseView (0.1.4):
     - RKILogger
     - RKIUtils
     - SnapKit
   - RKIHandyJSON (0.1.6)
-  - RKILogger (0.2.5):
+  - RKILogger (0.2.7):
     - CocoaLumberjack/Swift (~> 3.7.4)
   - RKIM (0.1.0):
     - IQKeyboardManager (~> 6.5.6)
@@ -65,7 +65,7 @@ PODS:
     - Then (~> 2.7.0)
     - TZImagePickerController
     - WCDB.swift
-  - RKIMCore (0.1.1):
+  - RKIMCore (1.1.2):
     - Moya
     - RKIHandyJSON
     - RKILogger
@@ -90,9 +90,9 @@ DEPENDENCIES:
   - Moya (~> 15.0.0)
   - RKIBaseView (from `https://github.com/RokidiOS/RKBaseView`)
   - RKIHandyJSON
-  - RKILogger (= 0.2.5)
+  - RKILogger (= 0.2.7)
   - RKIM (from `../`)
-  - RKIMCore (from `../../RKIMCore`)
+  - RKIMCore (from `https://github.com/RokidiOS/RKIMCore`, branch `1.1.2_swift5.6.0`)
   - RKIUtils
   - RKSocket (from `https://github.com/RokidiOS/RKSocket`)
 
@@ -125,14 +125,18 @@ EXTERNAL SOURCES:
   RKIM:
     :path: "../"
   RKIMCore:
-    :path: "../../RKIMCore"
+    :branch: 1.1.2_swift5.6.0
+    :git: https://github.com/RokidiOS/RKIMCore
   RKSocket:
     :git: https://github.com/RokidiOS/RKSocket
 
 CHECKOUT OPTIONS:
   RKIBaseView:
-    :commit: c507c205df9ba7f62019b4de71f23b04e11afff3
+    :commit: a396fd7d74c5e05876df6bc2dc62aa5133fcedcf
     :git: https://github.com/RokidiOS/RKBaseView
+  RKIMCore:
+    :commit: 7f4970b9ea7fdab76b056920ecf9c67124b082d5
+    :git: https://github.com/RokidiOS/RKIMCore
   RKSocket:
     :commit: df8726a2b8275464516b8af342fb52934e144722
     :git: https://github.com/RokidiOS/RKSocket
@@ -149,11 +153,11 @@ SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LookinServer: 3d9a02529ed94a6a08154440c26f6d7f453bb1e7
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  RKIBaseView: f3bb18e3d0b227eef45556424bd4ac5d5b1022fb
+  RKIBaseView: 6dd7d034276ea70d19db74307b90c8b0bd7c4761
   RKIHandyJSON: b3928e42af5d7d3b4cefb686079093d130e9066e
-  RKILogger: 23601a7125a5fa5c58e20dffb14b437d3c22414c
+  RKILogger: fe3c5cd9b2179958478d4f007a85f4e33378f85a
   RKIM: f64d138d30447786e65cc0fbe6ecf21ad7d2002f
-  RKIMCore: 9ea23ce5482138d22f2b5e2acf5fbf55db5c748f
+  RKIMCore: 7760504fb15f20a43e700d5f6df17268f20b2309
   RKIUtils: 0170015917b7208cef4491421afe6cce74f2cb7c
   RKSocket: 325bffa5c1c87851fce39b656db0912975ff0909
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
@@ -163,6 +167,6 @@ SPEC CHECKSUMS:
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: a9f060595056f3fca5d9d5e83d9d4f12cb4af058
+PODFILE CHECKSUM: 4e3ae769e993c089c12555f2ffe80347bc0bc0c3
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

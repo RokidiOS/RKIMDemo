@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="连接状态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-h4-Wdy">
-                                <rect key="frame" x="16" y="0.0" width="343" height="105"/>
+                                <rect key="frame" x="16" y="40" width="343" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -81,7 +81,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="w3B-h4-Wdy" secondAttribute="trailing" id="qtG-TN-XCR"/>
                             <constraint firstItem="Hs6-Sz-xFa" firstAttribute="top" secondItem="Paw-OL-0TB" secondAttribute="bottom" constant="20" id="sgl-uO-7oZ"/>
                             <constraint firstItem="Paw-OL-0TB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="tg2-RK-9wq"/>
-                            <constraint firstItem="w3B-h4-Wdy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="tzd-3P-xEF"/>
                             <constraint firstItem="w3B-h4-Wdy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zcX-NJ-L3r"/>
                         </constraints>
                     </view>
@@ -164,7 +163,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KFU-9L-Ora">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -184,7 +182,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cg7-wQ-Dyg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
