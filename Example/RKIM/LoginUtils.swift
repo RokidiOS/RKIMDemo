@@ -49,7 +49,7 @@ public enum EnvType {
 
 }
 
-public var env = EnvType.test
+public var env = EnvType.develop
 
 public class LoginHelper: NSObject {
     

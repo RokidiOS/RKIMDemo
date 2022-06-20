@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configDoraemon()
         window?.backgroundColor = .white
         RKLogMgr.shared.logLevel = .verbose
+        
         return true
     }
 

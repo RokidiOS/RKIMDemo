@@ -58,7 +58,7 @@ class ViewController: UIViewController {
             LoginHelper.getUserInfo(token) { userDict, isSuccess in
                 let model = JSONDeserializer<RKIMUser>.deserializeFrom(dict: userDict)
                 if let model = model {
-                    self.imInit(token, model.userId)
+                    self.imInit(model.companyName, model.userId)
                     DemoUserCenter.userInfo = model
                 }
             }
@@ -76,15 +76,20 @@ class ViewController: UIViewController {
         configImageCache()
     }
 
-    func imInit(_ token: String, _ uid: String) {
+    func imInit(_ company: String, _ uid: String) {
 
         let httpURL = env.imURl()
         let socketUrl = env.socketURl()
         RKToast.show(withText: "登陆成功", duration: 1, in: view)
         let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL)
         RKIMManager.share.config(config: config)
+        
+        RKIMManager.share.config(appId: "11", secret: "7ba1b9a5566d4f609cc8efb25d0f1d60")
+        
         RKIMManager.share.addDelegate(newDelegate: self)
-        RKIMManager.share.login(token: token, uid: uid)
+//        RKIMManager.share.login(token: token, uid: uid)
+        
+        RKIMManager.share.login(userId: uid, companyId: company)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let demotbVC = storyboard.instantiateViewController(withIdentifier: "demotab")
