@@ -17,6 +17,7 @@ import Kingfisher
 import RKIUtils
 import AFNetworking
 import RKIHandyJSON
+import RKSassLog
 
 class demo: NSObject {
     var age: Int
@@ -46,11 +47,11 @@ class ViewController: UIViewController {
             RKToast.show(withText: "密码不能为空", duration: 1, in: view)
             return  }
         
-        LoginHelper.loginAction(companyID: "rokid", userName: userName, password: password, compeletBlock: { [self] uuid, token, erroMsg in
+        LoginHelper.loginAction(companyID: "rokid", userName: userName, password: password, compeletBlock: { [self] uuid, token, erroMsg ,_ ,_  in
             guard let _ = uuid, let token = token else {
                 if let msg = erroMsg {
                     RKToast.show(withText: msg, duration: 2, in: self.view)
-                    infoLb.text = "登陆失败\(msg)"
+                    self.infoLb.text = "登陆失败\(msg)"
                 }
                 return
             }
@@ -59,11 +60,11 @@ class ViewController: UIViewController {
                 let model = JSONDeserializer<RKIMUser>.deserializeFrom(dict: userDict)
                 if let model = model {
                     self.imInit(model.companyName, model.userId)
-                    DemoUserCenter.userInfo = model
+//                    DemoUserCenter.userInfo = model
                 }
             }
             
-            infoLb.text = "登陆成功"
+            self.infoLb.text = "登陆成功"
             UserDefaults.standard.set(self.userNameTf.text, forKey: self.udUserKey)
             UserDefaults.standard.set(self.passwordTf.text, forKey: self.udPwdKey)
         })
@@ -77,7 +78,8 @@ class ViewController: UIViewController {
     }
 
     func imInit(_ company: String, _ uid: String) {
-
+        kUserId = uid
+        
         let httpURL = env.imURl()
         let socketUrl = env.socketURl()
         RKToast.show(withText: "登陆成功", duration: 1, in: view)

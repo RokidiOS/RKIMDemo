@@ -19,10 +19,10 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let info = DemoUserCenter.userInfo
-        avator.kf.setImage(with: URL(string: info.headPortrait))
-        infoLabel.text =  info.realName + "|" + info.companyName + " |"
-        
+//        let info = DemoUserCenter.userInfo
+//        avator.kf.setImage(with: URL(string: info.headPortrait))
+//        infoLabel.text =  info.realName + "|" + info.companyName + " |"
+//        
     }
     
 

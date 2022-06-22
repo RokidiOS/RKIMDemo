@@ -12,6 +12,7 @@ end
 
 target 'RKIM_Example' do
   pod 'RKIM', :path => '../'
+  pod 'RKSassLog', :path => '../'
   pod 'RKILogger', '0.2.5'
   pod 'RKIBaseView', :git => gitUrl("RKBaseView")
   pod 'RKIUtils'
