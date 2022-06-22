@@ -69,15 +69,15 @@ class DBHelper {
     class func asyUser(_ userID: String, compelet:@escaping (RKIMUser?) ->Void) {
         let equalUserIDCondition = Expression(with: Column(named: "userId")) == userID
         
-        RKIMDBManager.queryObjects(RKIMUser.self, where: equalUserIDCondition) { users in
-            
-            guard let user = users.first else {
-                compelet(nil)
-                return
-            }
-            compelet(user)
-            
-        }
+//        RKIMDBManager.queryObjects(RKIMUser.self, where: equalUserIDCondition) { users in
+//
+//            guard let user = users.first else {
+//                compelet(nil)
+//                return
+//            }
+//            compelet(user)
+//
+//        }
     }
     
 }

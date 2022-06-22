@@ -113,33 +113,33 @@ class RKChatListCell: RKBaseCell {
     }
      
     func setModel(_ model: RKIMGroup) {
-       
+        
         if model.groupType == .singleGroup {
             let otherUser = model.userList.first { user in
-               return !user.isSelf
-            }
+               return user.isSelf
+            }?.userInfo
             if let otherUser = otherUser {
                 titleLabel.text = otherUser.realName
                 let groupAvatars = otherUser.headPortrait
-                avatarImageView.kf.setImage(with: URL(string: groupAvatars), placeholder: nil)
+                avatarImageView.kf.setImage(with: URL(string: groupAvatars), placeholder: UIImage(named: "contact_selected"))
             }
         } else {
-            titleLabel.text = model.groupName.replacingOccurrences(of: "的技术支持", with: "")
-            if let groupAvatars = model.groupAvatars {
-                avatarImageView.kf.setImage(with: URL(string: groupAvatars), placeholder: nil)
-            } else {
-                avatarImageView.image = nil
-            }
+            titleLabel.text = model.groupName
+//            if let groupAvatars = model.groupAvatars {
+//            avatarImageView.kf.setImage(with: URL(string: model.groupAvatars), placeholder: UIImage(named: "contact_selected"))
+//            } else {
+//                avatarImageView.image = nil
+//            }
         }
-        
+
         let message = model.lastMessage
         unreadLabel.text = model.unReadCount > 99 ? "99+" : "\(model.unReadCount)"
         unreadView.isHidden = model.unReadCount == 0
-        
+
         //服务端消息不全 由于复用cell会造成信息显示不正确
         timeLabel.text  = ""
         lastMessageLabel.text = ""
-        
+
         guard let sendTimeLong = message?.sendTimeLong else { return }
         timeLabel.text = RKChatToolkit.formatCallDate(date: Date(timeIntervalSince1970: sendTimeLong/1000) as Date)
         guard let msgModel = message?.messageDetailModel else { return }
@@ -162,15 +162,18 @@ class RKChatListCell: RKBaseCell {
         case .none: break
         default: break
         }
-        
-        var name = ""
-        let member = model.userList.filter {$0.userId == message?.sender}.first
-        if member != nil {
-            name = member!.realName
-        }
 
-        lastMessageLabel.text = name + " : " + messageDetail
+        var name = ""
+        if model.lastMessage?.sender == kUserId {
+            name = "我"
+        } else {
+            if let member = model.userList.filter({$0 == message?.sender}).first?.userInfo {
+               name = member.realName
+            }
+        }
        
+        lastMessageLabel.text = name + " : " + messageDetail
+
     }
 
 }

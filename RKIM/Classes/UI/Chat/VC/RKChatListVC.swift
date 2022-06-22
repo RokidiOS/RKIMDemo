@@ -18,7 +18,8 @@ open class RKChatListVC: RKBaseViewController {
  
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
+        loadData()
     }
     
     open override func viewDidLoad() {
@@ -26,23 +27,23 @@ open class RKChatListVC: RKBaseViewController {
         self.edgesForExtendedLayout = .bottom
         title = "消息"
         RKIMManager.share.addDelegate(newDelegate: self)
-        loadData()
+//        loadData()
         setupRightNavBarItem()
     }
     
     func loadData(_ isNeedLoadNet: Bool = true) {
 
-        RKIMDBManager.queryObjects(RKIMGroup.self, where: RKUserCenter.userConCondition()) { groups in
-            self.groupList = groups
-            self.tableView.emptyView.isHidden = groups.count > 0
-            self.resortRefreshList()
-        }
+//        RKIMDBManager.queryObjects(RKIMGroup.self, where: RKUserCenter.userConCondition()) { groups in
+//            self.groupList = groups
+//            self.tableView.emptyView.isHidden = groups.count > 0
+//            self.resortRefreshList()
+//        }
         
         if isNeedLoadNet {
             RKIMManager.share.groupList { isSuccess, errorMessage, groups in
                 guard let groups = groups else { return }//
                 self.groupList = groups
-                RKIMDBManager.dbAddObjects(groups)
+//                RKIMDBManager.dbAddObjects(groups)
                 self.tableView.emptyView.isHidden = groups.count > 0
                 self.resortRefreshList()
                 
@@ -227,18 +228,16 @@ extension RKChatListVC: UITableViewDelegate {
         detailVC = chatDetailVC
         detailVC?.refreshBlock = {[weak self]
             isSuccess in
-            if isSuccess {
-                self?.loadData(isSuccess)
-            }
+//            if isSuccess {
+//                self?.loadData(isSuccess)
+//            }
         }
         
         chatDetailVC.groupId = group.groupId
         chatDetailVC.groupInfo = group
         chatDetailVC.groupMemberCount = group.userList.count
         
-        let otherUser = group.userList.first { user in
-           return !user.isSelf
-        }
+        let otherUser = group.userList.first { !$0.isSelf }?.userInfo
         if group.groupType == .singleGroup, let otherUser = otherUser {
             chatDetailVC.title = otherUser.realName
         } else {

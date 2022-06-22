@@ -52,9 +52,9 @@ extension RKAddressBookGroupViewController: AddressBookGroupListViewDeleagte {
         var selectedContactInfos: [RKIMUser] = []
         
         for item in contactGroupModel.userList {
-            if !item.isSelf {
-                selectedContactInfos.append(item)
-            }
+//            if !item.isSelf {
+//                selectedContactInfos.append(item)
+//            }
         }
         
         guard selectedContactInfos.count > 0 else {
@@ -78,7 +78,7 @@ extension RKAddressBookGroupViewController: UITableViewDelegate {
         
         let userList = contactGroups[indexPath.row].userList
         let groupDetailVC = RKGroupdDetailVC()
-        groupDetailVC.dataList = userList
+//        groupDetailVC.dataList = userList
         groupDetailVC.groupID = contactGroups[indexPath.row].groupId
         groupDetailVC.loadGourpUser(contactGroups[indexPath.row].groupId)
         navigationController?.pushViewController(groupDetailVC, animated: true)

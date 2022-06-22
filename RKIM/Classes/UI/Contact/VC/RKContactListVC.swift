@@ -13,8 +13,9 @@ import RKILogger
 import WCDBSwift
 import RKIMCore
 import MapKit
+import RKSassLog
 
-var KContacts: [RKIMUser] = []
+
 open class RKContactListVC: UIViewController {
     // 联系人列表
     var selfContacts: [RKIMUser] = [RKIMUser()]{
@@ -119,23 +120,14 @@ open class RKContactListVC: UIViewController {
     // 加载联系人列表
     func loadContactData() {
       
-        RKIMDBManager.queryObjects(RKIMUser.self, where: RKUserCenter.userConCondition(), orderBy:[ RKIMUser.Properties.username.asOrder(by: .ascending)]) { contacts in
-            self.selfContacts = contacts
+        LoginHelper.getContactsList(nil, keyword: nil) { dataDict, isSuccess in
+            if isSuccess {
+                guard let contactsList = dataDict?["contactsList"] as? [Any],
+                   let dataArray = JSONDeserializer<RKIMUser>.deserializeModelArrayFrom(array: contactsList) as? [RKIMUser] else { return }
+                self.selfContacts = dataArray
+            }
         }
         
-        RKIMManager.share.contactList { isSuccess, errorMessage, contacts in
-            if isSuccess {
-                guard let contacts = contacts else { return }
-                self.selfContacts = contacts
-                RKIMDBManager.dbAddObjects(contacts)
-                
-            } else {
-                guard let errorMessage = errorMessage else { return }
-                RKToast.show(withText: "\(errorMessage)")
-            }
-            
-        }
-    
     }
     
     lazy var addressBookListView: RKAddressBookListView = {
@@ -190,16 +182,7 @@ extension RKContactListVC: UITableViewDelegate {
             navigationController?.pushViewController(addressBookGroupVC, animated: true)
             
         } else {
-            // 离线状态不可选取
-//            guard contactInfoModel.status == 1 else {
-//                return
-//            }
-            
-            guard self.addressBookListView.selectedContactInfos.keys.count < 15 else {
-                RKToast.show(withText: "您最多可选择15个人发起协作", in: view)
-                return
-            }
-            
+
             if self.addressBookListView.selectedContactInfos.keys.contains(contactInfoModel.userId) {
                 self.addressBookListView.selectedContactInfos.removeValue(forKey: contactInfoModel.userId)
             } else {

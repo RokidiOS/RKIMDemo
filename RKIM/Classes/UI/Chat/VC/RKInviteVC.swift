@@ -43,28 +43,28 @@ class RKInviteVC: UIViewController {
     
     func loadContactData() {
       
-        guard let groupID = groupID else { return }
-        RKIMManager.share.groupMemberList(groupID: groupID) { isSuccess, errorMessage, alreadyContacts in
-            if isSuccess {
-                self.queryallMembers { contacts in
-                    guard let alreadyContacts = alreadyContacts else { return }
-                    var tpContact = contacts
-                    for pAlready in alreadyContacts {
-                        tpContact.removeAll { pModel in
-                            pModel.userId == pAlready.userId
-                        }
-                    }
-                    self.selfContacts = tpContact
-                }
-            }
-        }
+//        guard let groupID = groupID else { return }
+//        RKIMManager.share.groupMemberList(groupID: groupID) { isSuccess, errorMessage, alreadyContacts in
+//            if isSuccess {
+//                self.queryallMembers { contacts in
+//                    guard let alreadyContacts = alreadyContacts else { return }
+//                    var tpContact = contacts
+//                    for pAlready in alreadyContacts {
+//                        tpContact.removeAll { pModel in
+//                            pModel.userId == pAlready.userId
+//                        }
+//                    }
+//                    self.selfContacts = tpContact
+//                }
+//            }
+//        }
         
     }
     
     func queryallMembers(_ complete:@escaping ([RKIMUser]) ->Void) {
-        RKIMDBManager.queryObjects(RKIMUser.self, where: RKUserCenter.userConCondition(), orderBy:[ RKIMUser.Properties.username.asOrder(by: .ascending)]) { contacts in
-            complete(contacts)
-        }
+//        RKIMDBManager.queryObjects(RKIMUser.self, where: RKUserCenter.userConCondition(), orderBy:[ RKIMUser.Properties.username.asOrder(by: .ascending)]) { contacts in
+//            complete(contacts)
+//        }
     }
 }
 

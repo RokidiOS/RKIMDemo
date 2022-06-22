@@ -9,7 +9,7 @@ import Foundation
 import RKIMCore
 
 public class DemoUserCenter {
-    public static var userInfo = RKIMUser()
+//    public static var userInfo = RKIMUser()
 }
 
 extension String {

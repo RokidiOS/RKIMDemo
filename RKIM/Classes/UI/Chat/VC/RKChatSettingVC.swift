@@ -410,7 +410,9 @@ extension RKChatSettingMemberCell: UICollectionViewDelegate, UICollectionViewDat
                 cell.imageView.contentMode = .center
                 cell.imageView.image = image
             } else {
-                let url = groupInfo.userList[indexPath.row].headPortrait
+                #warning("TODO")
+                let url = ""
+//                groupInfo.userList[indexPath.row].headPortrait
                 cell.imageView.contentMode = .scaleAspectFit
                 let image = UIImage(named: "default_avatar", aclass: self.classForCoder)
                 cell.imageView.kf.setImage(with: URL(string: url), placeholder: image)

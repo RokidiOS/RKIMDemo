@@ -51,7 +51,8 @@ class RKGroupdDetailVC: RKBaseViewController {
     func loadGourpUser(_ groupId: String) {
         RKIMManager.share.groupMemberList(groupID: groupId) { isSuccess, errorMessage, contacts in
             guard let contacts = contacts else { return }
-            self.dataList = contacts
+            #warning("TODO")
+//            self.dataList = contacts
         }
     }
     
@@ -83,10 +84,10 @@ extension RKGroupdDetailVC: AddressBookListViewDeleagte {
             infoVC.info = dataList[index]
             self.navigationController?.pushViewController(infoVC, animated: true)
         } else {
-            if dataList[index].isSelf {
-                RKToast.show(withText: "不能对自己进行操作", in:view)
-                return
-            }
+//            if dataList[index].isSelf {
+//                RKToast.show(withText: "不能对自己进行操作", in:view)
+//                return
+//            }
             let userId = dataList[index].userId
             let alerControll = UIAlertController(title: "温馨提示", message: "您将\(action.rawValue)", preferredStyle: .alert)
             let doneAction = UIAlertAction(title: "确定", style: .default) { _ in

@@ -376,28 +376,28 @@ public class RKChatDetailVC: RKBaseViewController {
             alertVC.dismiss(animated: true, completion: nil)
         }
         
-        DBHelper.asyGroup(groupID) { model in
-            if let model = model {
-                var array = [infoActio, historyAction,changeGroupNameAction, inviteAction, memberAction]
-                if model.groupType == .singleGroup {
-                    array = [historyAction]
-                } else if model.ownerId == DemoUserCenter.userInfo.userId {
-                    array.append(reOwnerAction)
-                    array.append(removeAction)
-                    array.append(dismissAction)
-                } else {
-                    array.append(exitAction)
-                }
-                
-                array.append(cancelAction)
-                for action in array {
-                    alertVC.addAction(action)
-                }
-
-                self.present(alertVC, animated: true, completion: nil)
-                
-            }
-        }
+//        DBHelper.asyGroup(groupID) { model in
+//            if let model = model {
+//                var array = [infoActio, historyAction,changeGroupNameAction, inviteAction, memberAction]
+//                if model.groupType == .singleGroup {
+//                    array = [historyAction]
+//                } else if model.ownerId == DemoUserCenter.userInfo.userId {
+//                    array.append(reOwnerAction)
+//                    array.append(removeAction)
+//                    array.append(dismissAction)
+//                } else {
+//                    array.append(exitAction)
+//                }
+//
+//                array.append(cancelAction)
+//                for action in array {
+//                    alertVC.addAction(action)
+//                }
+//
+//                self.present(alertVC, animated: true, completion: nil)
+//
+//            }
+//        }
         
      
       
@@ -995,7 +995,7 @@ extension RKChatDetailVC {
         guard let groupInfo = groupInfo else { return }
         guard let groupID = groupId else { return }
         let groupMemberVC = RKGroupdDetailVC()
-        groupMemberVC.dataList = groupInfo.userList
+//        groupMemberVC.dataList = groupInfo.userList
         groupMemberVC.action = .reOwner
         groupMemberVC.groupID = groupID
         self.navigationController?.pushViewController(groupMemberVC, animated: true)
@@ -1006,7 +1006,7 @@ extension RKChatDetailVC {
         guard let groupInfo = groupInfo else { return }
         guard let groupID = groupId else { return }
         let groupMemberVC = RKGroupdDetailVC()
-        groupMemberVC.dataList = groupInfo.userList
+//        groupMemberVC.dataList = groupInfo.userList
         groupMemberVC.action = .remove
         groupMemberVC.groupID = groupID
         self.navigationController?.pushViewController(groupMemberVC, animated: true)
@@ -1016,18 +1016,18 @@ extension RKChatDetailVC {
     func exitAction() {
 //        guard let groupInfo = groupInfo else { return }
         guard let groupID = groupId else { return }
-        RKIMManager.share.rmoveGroupUsers(groupId: groupID, userList: [DemoUserCenter.userInfo.userId]) { isSuccess, errorMessage, result in
-            if isSuccess {
-                RKToast.show(withText: "退群成功")
-                DBHelper.asyDeletGroup(groupID) { isSucc in
-                    self.refreshBlock?(isSucc)
-                    
-                    self.navigationController?.popViewController(animated: true)
-                }
-            } else {
-                RKToast.show(withText: errorMessage)
-            }
-        }
+//        RKIMManager.share.rmoveGroupUsers(groupId: groupID, userList: [DemoUserCenter.userInfo.userId]) { isSuccess, errorMessage, result in
+//            if isSuccess {
+//                RKToast.show(withText: "退群成功")
+//                DBHelper.asyDeletGroup(groupID) { isSucc in
+//                    self.refreshBlock?(isSucc)
+//
+//                    self.navigationController?.popViewController(animated: true)
+//                }
+//            } else {
+//                RKToast.show(withText: errorMessage)
+//            }
+//        }
     }
     
     ///群成员列表
@@ -1035,7 +1035,7 @@ extension RKChatDetailVC {
         guard let groupInfo = groupInfo else { return }
         guard let groupID = groupId else { return }
         let groupMemberVC = RKGroupdDetailVC()
-        groupMemberVC.dataList = groupInfo.userList
+//        groupMemberVC.dataList = groupInfo.userList
         groupMemberVC.action = .members
         groupMemberVC.groupID = groupID
         self.navigationController?.pushViewController(groupMemberVC, animated: true)

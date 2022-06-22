@@ -151,8 +151,9 @@ class RKChatDetailCell: RKBaseCell {
 //        nickNameLabel.isHidden = isSelf
         nickNameLabel.text = nickName
         if isSelf {
-            nickNameLabel.text =  DemoUserCenter.userInfo.realName
-            avatar.kf.setImage(with: URL(string: DemoUserCenter.userInfo.headPortrait))
+            #warning("TODO")
+//            nickNameLabel.text =  DemoUserCenter.userInfo.realName
+//            avatar.kf.setImage(with: URL(string: DemoUserCenter.userInfo.headPortrait))
 
         } else if nickNameLabel.text!.isEmpty {
             DBHelper.asyUser(message.sender) { contact in

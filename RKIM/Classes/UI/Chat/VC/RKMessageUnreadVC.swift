@@ -45,15 +45,13 @@ class RKMessageUnreadVC: RKBaseViewController {
                 if let result = result as? [String: [String]] {
                     self.readDataSource = result["readUserList"] ?? []
                     self.unreadDataSource = result["unReadUserList"] ?? []
-//                    self.userInstead(&self.readDataSource)
-//                    self.userInstead(&self.unreadDataSource)
                     self.userInstead(self.readDataSource) {[weak self] array in
                         self?.readDataSource = array
                     }
                     self.userInstead(self.unreadDataSource) {[weak self] array in
                         self?.unreadDataSource = array
                     }
-
+                    self.tableView.reloadData()
                 }
             } else {
                 RKToast.show(withText: errorMessage, in: self.view)
@@ -64,18 +62,9 @@ class RKMessageUnreadVC: RKBaseViewController {
     private func userInstead(_ userIds: [String], compelet: @escaping ([String]) -> Void){
         var tpArray = [String]()
         for id in userIds {
-            DBHelper.asyUser(id) { model in
-                guard let model = model else { return }
-                tpArray.append(model.realName)
-                if tpArray.count == userIds.count {
-                    compelet(tpArray)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-          
+            tpArray.append(id.userInfo.username)
         }
+        compelet(tpArray)
     }
     
     lazy var tableView: UITableView = {
