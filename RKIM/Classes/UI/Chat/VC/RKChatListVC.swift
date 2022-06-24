@@ -135,7 +135,11 @@ open class RKChatListVC: RKBaseViewController {
     
     weak var detailVC: RKChatDetailVC?
     private static let CellReuseIdentifier = "cell"
-    lazy var groupList: [RKIMGroup] = []
+    lazy var groupList: [RKIMGroup] = [] {
+        didSet {
+            KGroups = groupList
+        }
+    }
     private lazy var searchedChatList: [RKIMGroup] = []
     private lazy var searchText = ""
     private lazy var searchTextField = UITextField().then {

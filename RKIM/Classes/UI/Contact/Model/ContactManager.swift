@@ -7,6 +7,7 @@
 
 import Foundation
 import RKIHandyJSON
+import RKIMCore
 
 public var kUserId: String = ""
 extension String {
@@ -21,9 +22,17 @@ extension String {
             return KContacts.first { $0.userId == self } ?? RKIMUser()
         }
     }
+    
+    var groupInfo: RKIMGroup? {
+        get {
+            return KGroups.first { $0.groupId == self }
+        }
+    }
 }
 
 var KContacts: [RKIMUser] = []
+
+var KGroups: [RKIMGroup] = []
 
 public class RKIMUser: NSObject, HandyJSON {
    

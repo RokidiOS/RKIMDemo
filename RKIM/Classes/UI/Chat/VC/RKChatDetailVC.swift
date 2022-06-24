@@ -331,7 +331,7 @@ public class RKChatDetailVC: RKBaseViewController {
     }
     
     @objc func rightBarButtonItemAction() {
-//        guard let groupInfo = groupInfo else { return }
+
         guard let groupID = groupId else { return }
  
         let alertVC = UIAlertController(title: "群内功能", message: nil, preferredStyle: .actionSheet)
@@ -376,31 +376,26 @@ public class RKChatDetailVC: RKBaseViewController {
             alertVC.dismiss(animated: true, completion: nil)
         }
         
-//        DBHelper.asyGroup(groupID) { model in
-//            if let model = model {
-//                var array = [infoActio, historyAction,changeGroupNameAction, inviteAction, memberAction]
-//                if model.groupType == .singleGroup {
-//                    array = [historyAction]
-//                } else if model.ownerId == DemoUserCenter.userInfo.userId {
-//                    array.append(reOwnerAction)
-//                    array.append(removeAction)
-//                    array.append(dismissAction)
-//                } else {
-//                    array.append(exitAction)
-//                }
-//
-//                array.append(cancelAction)
-//                for action in array {
-//                    alertVC.addAction(action)
-//                }
-//
-//                self.present(alertVC, animated: true, completion: nil)
-//
-//            }
-//        }
-        
-     
-      
+        if let groupInfo = groupID.groupInfo {
+            var array = [infoActio, historyAction,changeGroupNameAction, inviteAction, memberAction]
+            if groupInfo.groupType == .singleGroup {
+                array = [historyAction]
+            } else if groupInfo.ownerId == kUserId {
+                array.append(reOwnerAction)
+                array.append(removeAction)
+                array.append(dismissAction)
+            } else {
+                array.append(exitAction)
+            }
+
+            array.append(cancelAction)
+            for action in array {
+                alertVC.addAction(action)
+            }
+
+            self.present(alertVC, animated: true, completion: nil)
+
+        }
     }
     
     func getGroupInfo() {
@@ -1035,7 +1030,9 @@ extension RKChatDetailVC {
         guard let groupInfo = groupInfo else { return }
         guard let groupID = groupId else { return }
         let groupMemberVC = RKGroupdDetailVC()
-//        groupMemberVC.dataList = groupInfo.userList
+        groupMemberVC.dataList = groupInfo.userList.map({ userId -> RKIMUser in
+           return userId.userInfo
+        })
         groupMemberVC.action = .members
         groupMemberVC.groupID = groupID
         self.navigationController?.pushViewController(groupMemberVC, animated: true)

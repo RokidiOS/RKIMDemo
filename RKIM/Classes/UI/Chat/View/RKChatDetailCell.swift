@@ -141,19 +141,15 @@ class RKChatDetailCell: RKBaseCell {
         timeLabel.isHidden = !showTime
         timeLabel.text = RKChatToolkit.formatMessageDate(date: Date(timeIntervalSince1970: message.sendTimeLong/1000) as Date)
 
-        
-        let nickName = message.senderName
-        
-        let avatarUrl = message.senderAvator
+        let nickName = message.sender.userInfo.username
+        let avatarUrl = message.sender.userInfo.headPortrait
         
         avatar.kf.setImage(with: URL(string: avatarUrl), placeholder: UIImage(named: "default_avatar", aclass: self.classForCoder))
-        //产品要求 自己的消息也要展示用户名
-//        nickNameLabel.isHidden = isSelf
         nickNameLabel.text = nickName
+        
         if isSelf {
-            #warning("TODO")
-//            nickNameLabel.text =  DemoUserCenter.userInfo.realName
-//            avatar.kf.setImage(with: URL(string: DemoUserCenter.userInfo.headPortrait))
+            nickNameLabel.text =  kUserId.userInfo.realName
+            avatar.kf.setImage(with: URL(string: kUserId.userInfo.headPortrait))
 
         } else if nickNameLabel.text!.isEmpty {
             DBHelper.asyUser(message.sender) { contact in
