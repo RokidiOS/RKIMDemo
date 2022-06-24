@@ -50,7 +50,7 @@ class RKInviteVC: UIViewController {
                     guard let alreadyContacts = alreadyContacts else { return }
                     var tpContact = contacts
                     for pAlready in alreadyContacts {
-                        if let alreadyUserID = pAlready["userId"] as? String {
+                        if let alreadyUserID = pAlready as? String {
                             tpContact.removeAll { pModel in
                                 pModel.userId == alreadyUserID
                             }

@@ -990,7 +990,9 @@ extension RKChatDetailVC {
         guard let groupInfo = groupInfo else { return }
         guard let groupID = groupId else { return }
         let groupMemberVC = RKGroupdDetailVC()
-//        groupMemberVC.dataList = groupInfo.userList
+        groupMemberVC.dataList = groupInfo.userList.map({ userId -> RKIMUser in
+           return userId.userInfo
+        })
         groupMemberVC.action = .reOwner
         groupMemberVC.groupID = groupID
         self.navigationController?.pushViewController(groupMemberVC, animated: true)
@@ -1001,7 +1003,9 @@ extension RKChatDetailVC {
         guard let groupInfo = groupInfo else { return }
         guard let groupID = groupId else { return }
         let groupMemberVC = RKGroupdDetailVC()
-//        groupMemberVC.dataList = groupInfo.userList
+        groupMemberVC.dataList = groupInfo.userList.map({ userId -> RKIMUser in
+           return userId.userInfo
+        })
         groupMemberVC.action = .remove
         groupMemberVC.groupID = groupID
         self.navigationController?.pushViewController(groupMemberVC, animated: true)
@@ -1011,18 +1015,18 @@ extension RKChatDetailVC {
     func exitAction() {
 //        guard let groupInfo = groupInfo else { return }
         guard let groupID = groupId else { return }
-//        RKIMManager.share.rmoveGroupUsers(groupId: groupID, userList: [DemoUserCenter.userInfo.userId]) { isSuccess, errorMessage, result in
-//            if isSuccess {
-//                RKToast.show(withText: "退群成功")
-//                DBHelper.asyDeletGroup(groupID) { isSucc in
-//                    self.refreshBlock?(isSucc)
-//
-//                    self.navigationController?.popViewController(animated: true)
-//                }
-//            } else {
-//                RKToast.show(withText: errorMessage)
-//            }
-//        }
+        RKIMManager.share.rmoveGroupUsers(groupId: groupID, userList: [kUserId]) { isSuccess, errorMessage, result in
+            if isSuccess {
+                RKToast.show(withText: "退群成功")
+                DBHelper.asyDeletGroup(groupID) { isSucc in
+                    self.refreshBlock?(isSucc)
+
+                    self.navigationController?.popViewController(animated: true)
+                }
+            } else {
+                RKToast.show(withText: errorMessage)
+            }
+        }
     }
     
     ///群成员列表
