@@ -306,7 +306,7 @@ public class RKChatDetailVC: RKBaseViewController {
     /// 是否是单聊
     var isSingleChat: Bool = true
     var groupInfo: RKIMGroup?//群组信息
-    var groupMemberCount = 1 /// 群组人数
+    var groupMemberCount = 2 /// 群组人数
     private var firstMessageTms = 0 ///第一条的时间戳
     private var pageSize = 30   /// 当前加载的size
     var messageList: [RKIMMessage] = []

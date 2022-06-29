@@ -116,7 +116,7 @@ class RKChatListCell: RKBaseCell {
         
         if model.groupType == .singleGroup {
             let otherUser = model.userList.first { user in
-               return user.isSelf
+               return !user.isSelf
             }?.userInfo
             if let otherUser = otherUser {
                 titleLabel.text = otherUser.realName
@@ -163,16 +163,17 @@ class RKChatListCell: RKBaseCell {
         default: break
         }
 
-        var name = ""
+        var names = ""
         if model.lastMessage?.sender == kUserId {
-            name = "我"
-        } else {
-            if let member = model.userList.filter({$0 == message?.sender}).first?.userInfo {
-               name = member.realName
+            names = "我"
+        } else if let userIdList = model.lastMessage?.messageDetailModel?.userIdList {
+           let nameArray = userIdList.map{ (id) -> String in
+               return id.userName() ?? ""
             }
+            names = nameArray.joined(separator: "、")
         }
        
-        lastMessageLabel.text = name + " : " + messageDetail
+        lastMessageLabel.text = names + " : " + messageDetail
 
     }
 

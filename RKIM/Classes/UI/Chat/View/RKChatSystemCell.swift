@@ -30,6 +30,11 @@ class RKChatSystemCell: UITableViewCell {
             infoLb.text = names + "被踢出群"
         }
       
+     
+        if message.messageDetailModel?.systemType == .exitGroup {
+            infoLb.text = names + "退出群聊"
+        }
+      
         timeLabel.text = message.messageDetailModel?.duration
         
         timeLabel.isHidden = !showTime
@@ -48,7 +53,6 @@ class RKChatSystemCell: UITableViewCell {
             make.centerX.equalToSuperview()
             make.top.equalTo(timeLabel.snp_bottom)
             make.width.equalToSuperview().offset(-30)
-//            make.height.equalTo(16)
             make.bottom.equalTo(-4)
         }
         
