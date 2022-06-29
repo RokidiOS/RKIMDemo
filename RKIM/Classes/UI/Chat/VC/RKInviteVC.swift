@@ -91,21 +91,6 @@ extension RKInviteVC: UITableViewDelegate {
         addressBookListView.reloadData()
             
     }
-//    {  tableView.deselectRow(at: indexPath, animated: true)
-//        let contact = selfContacts[indexPath.row]
-//
-//        let alerControll = UIAlertController(title: "温馨提示", message: "您将邀请\(contact.username) 进入群聊", preferredStyle: .alert)
-//        let doneAction = UIAlertAction(title: "确定", style: .default) { _ in
-//
-//        }
-//        let cancelAction = UIAlertAction(title: "取消", style: .destructive) { _ in
-//            alerControll.dismiss(animated: true, completion: nil)
-//        }
-//        alerControll.addAction(doneAction)
-//        alerControll.addAction(cancelAction)
-//        present(alerControll, animated: true, completion: nil)
-//
-//    }
     
    @objc func invitedAction() {
        
@@ -134,8 +119,9 @@ extension RKInviteVC: UITableViewDelegate {
        let cancelAction = UIAlertAction(title: "取消", style: .destructive) { _ in
            alerControll.dismiss(animated: true, completion: nil)
        }
-       alerControll.addAction(doneAction)
+       
        alerControll.addAction(cancelAction)
+       alerControll.addAction(doneAction)
        present(alerControll, animated: true, completion: nil)
    
         

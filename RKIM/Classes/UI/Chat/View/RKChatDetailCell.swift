@@ -142,27 +142,25 @@ class RKChatDetailCell: RKBaseCell {
         timeLabel.text = RKChatToolkit.formatMessageDate(date: Date(timeIntervalSince1970: message.sendTimeLong/1000) as Date)
 
         let nickName = message.sender.userInfo.username
-        let avatarUrl = message.sender.userInfo.headPortrait
-        
-        avatar.kf.setImage(with: URL(string: avatarUrl), placeholder: UIImage(named: "default_avatar", aclass: self.classForCoder))
+
         nickNameLabel.text = nickName
-        
+        var headUrl = ""
         if isSelf {
             nickNameLabel.text =  kUserId.userInfo.realName
-            avatar.kf.setImage(with: URL(string: kUserId.userInfo.headPortrait))
+            headUrl = kUserId.userInfo.headPortrait
 
         } else if nickNameLabel.text!.isEmpty {
             DBHelper.asyUser(message.sender) { contact in
                 if let contact = contact {
                     message.senderName = contact.realName
                     message.senderAvator = contact.headPortrait
-                    
                     self.nickNameLabel.text = contact.realName
-                    self.avatar.kf.setImage(with: URL(string: contact.headPortrait))
+                    headUrl = contact.headPortrait
                 }
             }
         }
         
+        avatar.kf.setImage(with: URL(string: headUrl), placeholder: UIImage(named: "default_avator"))
         let messageState = message.status
         resendButton.isHidden = !(messageState == .fail && message.direction == .send)
         

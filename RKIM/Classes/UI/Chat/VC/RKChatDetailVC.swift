@@ -955,8 +955,8 @@ extension RKChatDetailVC {
         let cancelAction = UIAlertAction(title: "取消", style: .destructive) { _ in
             alerControll.dismiss(animated: true, completion: nil)
         }
-        alerControll.addAction(donelAction)
         alerControll.addAction(cancelAction)
+        alerControll.addAction(donelAction)
         present(alerControll, animated: true, completion: nil)
     }
     ///修改群名称
