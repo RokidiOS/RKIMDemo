@@ -125,7 +125,7 @@ class RKChatListCell: RKBaseCell {
             }
         } else {
             titleLabel.text = model.groupName
-            avatarImageView.image = UIImage(named: "default_group_avator")
+            avatarImageView.kf.setImage(with: URL(string: model.groupAvatars ?? ""), placeholder: UIImage(named: "default_group_avator"))
         }
 
         let message = model.lastMessage
