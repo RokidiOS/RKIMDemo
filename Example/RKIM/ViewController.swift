@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         guard let password = passwordTf.text else {
             RKToast.show(withText: "密码不能为空", duration: 1, in: view)
             return  }
+        env = .test
         
         LoginHelper.loginAction(companyID: "rokid", userName: userName, password: password, compeletBlock: { [self] uuid, token, erroMsg ,_ ,_  in
             guard let _ = uuid, let token = token else {
@@ -80,17 +81,31 @@ class ViewController: UIViewController {
     func imInit(_ company: String, _ uid: String) {
         kUserId = uid
         
-        let httpURL = env.imURl()
-        let socketUrl = env.socketURl()
+
         RKToast.show(withText: "登陆成功", duration: 1, in: view)
-        let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL)
-        RKIMManager.share.config(config: config)
-        
-        RKIMManager.share.config(appId: "11", secret: "7ba1b9a5566d4f609cc8efb25d0f1d60")
+        var isDev = false
+        if isDev {
+            env = .develop
+            let httpURL = env.imURl()
+            let socketUrl = env.socketURl()
+            let appId = "11"
+            let secrect = "7ba1b9a5566d4f609cc8efb25d0f1d60"
+            let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL, appId: appId, secret: secrect)
+            RKIMManager.share.config(config: config)
+        } else {
+            env = .test
+            let httpURL = env.imURl()
+            let socketUrl = "wss://im-testwss.rokid-inc.com/ws/"
+            let appId = "12"
+            let secrect = "e6c7207e2b3d4f9f8004298cedd127c8"
+            let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL, appId: appId, secret: secrect)
+            RKIMManager.share.config(config: config)
+        }
+     
         
         RKIMManager.share.addDelegate(newDelegate: self)
-//        RKIMManager.share.login(token: token, uid: uid)
         
+
         RKIMManager.share.login(userId: uid, companyId: company)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
