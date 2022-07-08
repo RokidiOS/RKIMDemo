@@ -23,7 +23,7 @@ extension String {
         return nil
     }
     /// id 对应的用户头像
-    func userAvator() ->String? {
+    func userAvatar() ->String? {
         for user in KContacts {
             if user.userId == self {
                 return user.headPortrait

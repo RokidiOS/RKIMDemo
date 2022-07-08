@@ -13,7 +13,7 @@ import RKIMCore
 
 class MeViewController: UIViewController {
 
-    @IBOutlet weak var avator: UIImageView!
+    @IBOutlet weak var avatar: UIImageView!
     
     @IBOutlet weak var infoLabel: UILabel!
     

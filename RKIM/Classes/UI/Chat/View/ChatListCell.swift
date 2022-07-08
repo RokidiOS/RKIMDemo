@@ -121,11 +121,11 @@ class RKChatListCell: RKBaseCell {
             if let otherUser = otherUser {
                 titleLabel.text = otherUser.realName
                 let groupAvatars = otherUser.headPortrait
-                avatarImageView.kf.setImage(with: URL(string: groupAvatars), placeholder: UIImage(named: "default_avator"))
+                avatarImageView.kf.setImage(with: URL(string: groupAvatars), placeholder: UIImage(named: "default_avatar"))
             }
         } else {
             titleLabel.text = model.groupName
-            avatarImageView.kf.setImage(with: URL(string: model.groupAvatars ?? ""), placeholder: UIImage(named: "default_group_avator"))
+            avatarImageView.kf.setImage(with: URL(string: model.groupAvatars ?? ""), placeholder: UIImage(named: "default_group_avatar"))
         }
 
         let message = model.lastMessage

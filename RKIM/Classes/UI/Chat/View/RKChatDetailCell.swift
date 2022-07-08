@@ -153,14 +153,14 @@ class RKChatDetailCell: RKBaseCell {
             DBHelper.asyUser(message.sender) { contact in
                 if let contact = contact {
                     message.senderName = contact.realName
-                    message.senderAvator = contact.headPortrait
+                    message.senderAvatar = contact.headPortrait
                     self.nickNameLabel.text = contact.realName
                     headUrl = contact.headPortrait
                 }
             }
         }
         
-        avatar.kf.setImage(with: URL(string: headUrl), placeholder: UIImage(named: "default_avator"))
+        avatar.kf.setImage(with: URL(string: headUrl), placeholder: UIImage(named: "default_avatar"))
         let messageState = message.status
         resendButton.isHidden = !(messageState == .fail && message.direction == .send)
         

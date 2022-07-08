@@ -71,7 +71,7 @@ class RKGroupNoticeEditVC: RKBaseViewController {
         tpNotiModel.content = content
         tpNotiModel.title = title
         guard let notiString = tpNotiModel.toJSONString()else { return  }
-        RKIMManager.share.updateGroupInfo(groupId: groupID, groupAvator: groupInfo.groupAvatars, groupConfig: notiString) { isSuccess, errorMessage, result in
+        RKIMManager.share.updateGroupInfo(groupId: groupID, groupAvatar: groupInfo.groupAvatars, groupConfig: notiString) { isSuccess, errorMessage, result in
             if isSuccess {
                 DBHelper.asyGroup(groupID) { model in
                     if let group = model {

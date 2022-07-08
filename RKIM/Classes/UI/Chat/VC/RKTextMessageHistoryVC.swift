@@ -158,7 +158,7 @@ extension RKTextMessageHistoryVC: UITableViewDelegate, UITableViewDataSource {
         tableView.register(RKChatSearchHistoryCell.self, forCellReuseIdentifier: "RKChatSearchHistoryCell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "RKChatSearchHistoryCell", for: indexPath)
         let model = messageSearchDataList[indexPath.row]
-        let url = model.senderAvator
+        let url = model.senderAvatar
         let image = UIImage(named: "default_avatar", aclass: self.classForCoder)
         cell.imageView?.kf.setImage(with: URL(string: url), placeholder: image)
         cell.textLabel?.text = model.messageDetailModel?.content
