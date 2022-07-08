@@ -60,8 +60,7 @@ class ViewController: UIViewController {
             LoginHelper.getUserInfo(token) { userDict, isSuccess in
                 let model = JSONDeserializer<RKIMUser>.deserializeFrom(dict: userDict)
                 if let model = model {
-                    self.imInit(model.companyName, model.userId)
-//                    DemoUserCenter.userInfo = model
+                    self.imInit(model.companyId, model.userId)
                 }
             }
             

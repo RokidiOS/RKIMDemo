@@ -128,7 +128,6 @@
                     <connections>
                         <segue destination="Ykj-8M-vN8" kind="relationship" relationship="viewControllers" id="6U7-JW-AQr"/>
                         <segue destination="Zrf-cr-PGt" kind="relationship" relationship="viewControllers" id="Bv2-ZI-wCM"/>
-                        <segue destination="Doe-PO-k0E" kind="relationship" relationship="viewControllers" id="eFs-Uy-3IP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6L-OU-tuP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

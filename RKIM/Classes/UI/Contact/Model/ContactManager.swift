@@ -46,6 +46,8 @@ public class RKIMUser: NSObject, HandyJSON {
    
     public var companyName: String = "" /// 公司信息
    
+    public var companyId: String = "" /// 公司id
+    
     public var headPortrait: String = "" /// 头像URL
   
     public var unitName: String = ""  /// 部门
