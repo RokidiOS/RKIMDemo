@@ -11,6 +11,7 @@ import RKIBaseView
 import IQKeyboardManager
 import UIKit
 import RKIHandyJSON
+import RKIUtils
 
 class RKGroupNoticeEditVC: RKBaseViewController {
     var groupInfo = RKIMGroup() {
@@ -42,13 +43,15 @@ class RKGroupNoticeEditVC: RKBaseViewController {
         
         view.addSubViews([titleTextfield, noticeTextView])
         titleTextfield.snp.makeConstraints { make in
-            make.top.left.equalTo(10)
+            make.top.equalTo(UI.SafeTopHeight + 64 + 10)
+            make.left.equalTo(10)
             make.height.equalTo(50)
             make.right.equalTo(-10)
         }
         navigationConfig()
         noticeTextView.snp.makeConstraints { make in
-            make.edges.equalTo(UIEdgeInsets(top: 80, left: 10, bottom: 80, right: 10))
+            make.edges.equalTo(UIEdgeInsets(top: 80, left: 10, bottom: 80, right: 10)).priorityLow()
+            make.top.equalTo(titleTextfield.snp.bottom).offset(20).priorityHigh()
         }
     }
     
@@ -68,7 +71,7 @@ class RKGroupNoticeEditVC: RKBaseViewController {
         tpNotiModel.content = content
         tpNotiModel.title = title
         guard let notiString = tpNotiModel.toJSONString()else { return  }
-        RKIMManager.share.updateGroupInfo(groupId: groupID, groupConfig: notiString) { isSuccess, errorMessage, result in
+        RKIMManager.share.updateGroupInfo(groupId: groupID, groupAvator: groupInfo.groupAvatars, groupConfig: notiString) { isSuccess, errorMessage, result in
             if isSuccess {
                 DBHelper.asyGroup(groupID) { model in
                     if let group = model {

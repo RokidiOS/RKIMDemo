@@ -79,7 +79,7 @@ open class RKContactListVC: UIViewController {
     
     @objc func createAction() {
        let users = Array(self.addressBookListView.selectedContactInfos.keys)
-        RKIMManager.share.createGroup(groupName: "新群组", ownerId: nil, ownerJoinFlag:true, groupConfig: "", userList: users, compelet: { isSuccess, errorMessage, result in
+        RKIMManager.share.createGroup(groupName: "新群组", groupAvatar: "", ownerId: nil, ownerJoinFlag:true, groupConfig: "", userList: users, compelet: { isSuccess, errorMessage, result in
             if isSuccess {
                 RKToast.show(withText: "创建群组成功", duration: 1, in: self.view)
                 self.resetNavItemAction()
@@ -87,7 +87,7 @@ open class RKContactListVC: UIViewController {
                 RKToast.show(withText: "创建群组失败", duration: 1, in: self.view)
             }
         })
-    
+
     }
     
     @objc private func textFieldDidChange() {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RKIUtils
 
 class RKMessageHistoryVC: UIViewController {
     var groupID: String?
@@ -40,9 +41,10 @@ class RKMessageHistoryVC: UIViewController {
         fileBtn.addTarget(self, action: #selector(searchFileVC), for: .touchUpInside)
         
         view.addSubViews([textBtn, imageBtn, videoBtn, fileBtn])
+        let top = UI.SafeTopHeight + 64
         textBtn.snp.makeConstraints { make in
             make.size.equalTo((CGSize(width: 100, height: 100)))
-            make.top.equalTo(50)
+            make.top.equalTo(top)
             make.left.equalTo(10)
         }
 

@@ -113,7 +113,7 @@ extension RKGroupdDetailVC: AddressBookListViewDeleagte {
         }
         
         if action == .reOwner {
-            RKIMManager.share.updateGroupInfo(groupId: groupID, ownerId: userId) { isSuccess, errorMessage, result in
+            RKIMManager.share.updateGroupInfo(groupId: groupID, groupAvator: "https://img0.baidu.com/it/u=2381979250,1530647734&fm=253&fmt=auto&app=138&f=JPEG?w=708&h=500", ownerId: userId) { isSuccess, errorMessage, result in
                 if isSuccess {
                     DBHelper.asyGroup(groupID) { model in
                         if let group = model {
