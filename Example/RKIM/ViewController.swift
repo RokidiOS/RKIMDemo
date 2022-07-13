@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var infoLb: UILabel!
 
+    private let envSegmentedControl = UISegmentedControl(items: ["开发", "测试", "线上"])
     
     var logText = ""
     @IBAction func loginAction(_ sender: Any) {
@@ -73,8 +74,17 @@ class ViewController: UIViewController {
     let udUserKey = "userName"
     let udPwdKey = "passwordName"
     override func viewDidLoad() {
+        envSegmentedControl.selectedSegmentIndex = 0
         autoLogin()
         configImageCache()
+        view.addSubview(envSegmentedControl)
+        
+        envSegmentedControl.snp.makeConstraints { make in
+           make.centerX.equalToSuperview()
+           make.height.equalTo(40)
+           make.width.equalTo(120)
+           make.bottom.equalTo(userNameTf.snp.top).offset(-10)
+        }
     }
 
     func imInit(_ company: String, _ uid: String) {
@@ -82,23 +92,25 @@ class ViewController: UIViewController {
         
 
         RKToast.show(withText: "登陆成功", duration: 1, in: view)
-        var isDev = false
-        if isDev {
-            env = .develop
+//        var isDev = env == .develop
+        let idx = envSegmentedControl.selectedSegmentIndex + 1
+        if idx == 1 {
             let httpURL = env.imURl()
             let socketUrl = env.socketURl()
             let appId = "11"
             let secrect = "7ba1b9a5566d4f609cc8efb25d0f1d60"
             let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL, appId: appId, secret: secrect)
             RKIMManager.share.config(config: config)
-        } else {
-            env = .test
+        } else if idx == 2 {
             let httpURL = env.imURl()
             let socketUrl = "wss://im-testwss.rokid-inc.com/ws/"
-            let appId = "12"
-            let secrect = "e6c7207e2b3d4f9f8004298cedd127c8"
+            let appId = "13"
+            let secrect = "50614fa7d3d044809df15e38d977d956"
             let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL, appId: appId, secret: secrect)
             RKIMManager.share.config(config: config)
+        } else {
+            RKToast.show(withText: "未配置此环境")
+            return
         }
      
         
