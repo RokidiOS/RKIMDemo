@@ -108,7 +108,15 @@ class ViewController: UIViewController {
             let secrect = "50614fa7d3d044809df15e38d977d956"
             let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL, appId: appId, secret: secrect)
             RKIMManager.share.config(config: config)
-        } else {
+        } else if idx == 3 {
+            let httpURL = env.imURl()
+            let socketUrl = "wss://im-wss.rokid.com/ws/"
+            let appId = "13"
+            let secrect = "d8f56dd881324f76b70d761b6f865919"
+            let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL, appId: appId, secret: secrect)
+            RKIMManager.share.config(config: config)
+        }
+        else {
             RKToast.show(withText: "未配置此环境")
             return
         }
