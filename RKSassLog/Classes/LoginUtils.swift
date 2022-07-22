@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public enum EnvType {
+public enum EnvType: Int {
     case test
     case develop
     case product

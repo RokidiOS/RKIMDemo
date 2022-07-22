@@ -92,23 +92,26 @@ class ViewController: UIViewController {
         
 
         RKToast.show(withText: "登陆成功", duration: 1, in: view)
-//        var isDev = env == .develop
-        let idx = envSegmentedControl.selectedSegmentIndex + 1
-        if idx == 1 {
+
+        let idx = envSegmentedControl.selectedSegmentIndex
+        if idx == 0 {
+            env = .develop
             let httpURL = env.imURl()
             let socketUrl = env.socketURl()
             let appId = "11"
             let secrect = "7ba1b9a5566d4f609cc8efb25d0f1d60"
             let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL, appId: appId, secret: secrect)
             RKIMManager.share.config(config: config)
-        } else if idx == 2 {
+        } else if idx == 1 {
+            env = .test
             let httpURL = env.imURl()
             let socketUrl = "wss://im-testwss.rokid-inc.com/ws/"
             let appId = "13"
             let secrect = "50614fa7d3d044809df15e38d977d956"
             let config = RKIMConfig(socketURL: socketUrl, httpURL: httpURL, appId: appId, secret: secrect)
             RKIMManager.share.config(config: config)
-        } else if idx == 3 {
+        } else if idx == 2 {
+            env = .product
             let httpURL = env.imURl()
             let socketUrl = "wss://im-wss.rokid.com/ws/"
             let appId = "13"
