@@ -47,8 +47,18 @@ class ViewController: UIViewController {
         guard let password = passwordTf.text else {
             RKToast.show(withText: "密码不能为空", duration: 1, in: view)
             return  }
-        env = .test
+//        env = .test
+//        kurlPrex
         
+        let idx = envSegmentedControl.selectedSegmentIndex
+        if idx == 0 {
+            env = .develop
+        } else if idx == 1 {
+            env = .test
+        } else if idx == 2 {
+            env = .product
+        }
+        LoginHelper.kurlPrex = env.sassURl()
         LoginHelper.loginAction(companyID: "rokid", userName: userName, password: password, compeletBlock: { [self] uuid, token, erroMsg ,_ ,_  in
             guard let _ = uuid, let token = token else {
                 if let msg = erroMsg {
@@ -75,7 +85,7 @@ class ViewController: UIViewController {
     let udPwdKey = "passwordName"
     override func viewDidLoad() {
         envSegmentedControl.selectedSegmentIndex = 0
-        autoLogin()
+//        autoLogin()
         configImageCache()
         view.addSubview(envSegmentedControl)
         
