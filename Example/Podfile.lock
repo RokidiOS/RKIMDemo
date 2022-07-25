@@ -66,7 +66,7 @@ PODS:
     - Then (~> 2.7.0)
     - TZImagePickerController
     - WCDB.swift
-  - RKIMCore (0.1.1):
+  - RKIMCore (1.1.2):
     - Moya
     - RKIHandyJSON
     - RKILogger
@@ -95,7 +95,7 @@ DEPENDENCIES:
   - RKIHandyJSON
   - RKILogger (= 0.2.5)
   - RKIM (from `../`)
-  - RKIMCore (from `../../RKIMCore`)
+  - RKIMCore (from `https://github.com/RokidiOS/RKIMCore`, branch `2.0.0_swift5.6.0`)
   - RKIUtils
   - RKSassLog (from `../`)
   - RKSocket (from `https://github.com/RokidiOS/RKSocket`)
@@ -129,7 +129,8 @@ EXTERNAL SOURCES:
   RKIM:
     :path: "../"
   RKIMCore:
-    :path: "../../RKIMCore"
+    :branch: 2.0.0_swift5.6.0
+    :git: https://github.com/RokidiOS/RKIMCore
   RKSassLog:
     :path: "../"
   RKSocket:
@@ -139,6 +140,9 @@ CHECKOUT OPTIONS:
   RKIBaseView:
     :commit: c507c205df9ba7f62019b4de71f23b04e11afff3
     :git: https://github.com/RokidiOS/RKBaseView
+  RKIMCore:
+    :commit: a57ef7e20d8b019e9f010b41bcef9f37dffed1a9
+    :git: https://github.com/RokidiOS/RKIMCore
   RKSocket:
     :commit: df8726a2b8275464516b8af342fb52934e144722
     :git: https://github.com/RokidiOS/RKSocket
@@ -159,7 +163,7 @@ SPEC CHECKSUMS:
   RKIHandyJSON: b3928e42af5d7d3b4cefb686079093d130e9066e
   RKILogger: 23601a7125a5fa5c58e20dffb14b437d3c22414c
   RKIM: febdf6a68bf05db9c6317e2e91fdc34667d4ccae
-  RKIMCore: 9ea23ce5482138d22f2b5e2acf5fbf55db5c748f
+  RKIMCore: a97db2d24c28bb4875832bd2de4e97d56039a7fc
   RKIUtils: 0170015917b7208cef4491421afe6cce74f2cb7c
   RKSassLog: be42c30c0227c12443c500b0e24ad7e3fb9ab479
   RKSocket: 325bffa5c1c87851fce39b656db0912975ff0909
@@ -170,6 +174,6 @@ SPEC CHECKSUMS:
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 4a201bd5064dcc40c904fe13e2fe4c590828342f
+PODFILE CHECKSUM: 0e59dc2be94602fe3406dca442a85350067033b8
 
 COCOAPODS: 1.11.3

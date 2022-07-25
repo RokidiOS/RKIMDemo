@@ -17,12 +17,9 @@ target 'RKIM_Example' do
   pod 'RKIBaseView', :git => gitUrl("RKBaseView")
   pod 'RKIUtils'
   pod 'RKIHandyJSON'
-  pod 'RKIMCore',  :path => "../../RKIMCore"
-#pod 'RKIMCore', :git => gitUrl("RKIMCore"), :branch => "0.1.2_swift5.5.2"
-#  pod 'RKIMCore', :path => "/Users/chzy/Desktop/Rokid/custom/RKIMCore/Framework"
-#  gitUrl("RKIMCore")
-  
-  
+
+  pod 'RKIMCore', :git => gitUrl("RKIMCore"), :branch => "2.0.0_swift5.6.0"
+
   pod 'LookinServer', :configurations => ['Debug']
   pod 'DoraemonKit'
   pod 'RKSocket', :git => gitUrl("RKSocket")
