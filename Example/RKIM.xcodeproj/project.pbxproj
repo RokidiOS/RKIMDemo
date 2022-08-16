@@ -271,7 +271,7 @@
 				"${BUILT_PRODUCTS_DIR}/RKIHandyJSON/RKIHandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/RKILogger/RKILogger.framework",
 				"${BUILT_PRODUCTS_DIR}/RKIM/RKIM.framework",
-				"${PODS_ROOT}/RKIMCore/IMCore/Frameworks/RKIMCore.framework",
+				"${BUILT_PRODUCTS_DIR}/RKIMCore/RKIMCore.framework",
 				"${BUILT_PRODUCTS_DIR}/RKIUtils/RKIUtils.framework",
 				"${BUILT_PRODUCTS_DIR}/RKSassLog/RKSassLog.framework",
 				"${BUILT_PRODUCTS_DIR}/RKSocket/RKSocket.framework",
