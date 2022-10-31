@@ -8,7 +8,7 @@
 
 import UIKit
 import RKIM
-import DoraemonKit
+
 import RKIMCore
 import RKILogger
 
@@ -29,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func configDoraemon() {
-        DoraemonManager.shareInstance().install()
-        DoraemonManager.shareInstance().addPlugin(withTitle: "当前socket状态", icon: "doraemon_default", desc: "用于查看当前socket状态", pluginName: "DoraemonEnvPlugin", atModule: "专区") { _ in
-            DoraemonHomeWindow.openPlugin(rkInfoVC.share)
-        }
+//        DoraemonManager.shareInstance().install()
+//        DoraemonManager.shareInstance().addPlugin(withTitle: "当前socket状态", icon: "doraemon_default", desc: "用于查看当前socket状态", pluginName: "DoraemonEnvPlugin", atModule: "专区") { _ in
+//            DoraemonHomeWindow.openPlugin(rkInfoVC.share)
+//        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

@@ -15,7 +15,6 @@ import Alamofire
 import RKIBaseView
 import Kingfisher
 import RKIUtils
-import AFNetworking
 import RKIHandyJSON
 import RKSassLog
 
