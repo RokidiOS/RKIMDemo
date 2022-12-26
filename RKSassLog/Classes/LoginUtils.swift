@@ -54,7 +54,7 @@ public var env = EnvType.develop
 
 public class LoginHelper: NSObject {
     
-    static let kurlPrex = env.sassURl()
+    public static var kurlPrex = env.sassURl()
     static let ktokenPrex = "Bearer "
     
     static var accessToken: String?

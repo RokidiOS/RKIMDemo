@@ -14,7 +14,7 @@ import RKIHandyJSON
 import RKIMCore
 import WCDBSwift
 
-open class RKChatListVC: RKBaseViewController {
+open class RKChatListVC: UIViewController {
  
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,6 +29,7 @@ open class RKChatListVC: RKBaseViewController {
         RKIMManager.share.addDelegate(newDelegate: self)
 //        loadData()
         setupRightNavBarItem()
+        setupView()
     }
     
     func loadData(_ isNeedLoadNet: Bool = true) {
@@ -60,8 +61,7 @@ open class RKChatListVC: RKBaseViewController {
         }
     }
     
-    open override func setupView() {
-        super.setupView()
+    func setupView() {
         view.addSubview(tableView)
         view.addSubview(searchTextField)
         searchTextField.snp.makeConstraints { make in
@@ -78,9 +78,9 @@ open class RKChatListVC: RKBaseViewController {
        }
     }
     
-    open override func setupLeftNavBarItem() {}
+    func setupLeftNavBarItem() {}
     
-    open override func setupRightNavBarItem() {
+    func setupRightNavBarItem() {
         let logOutItem = UIBarButtonItem(title: "退出登录", style: .plain, target: self, action: #selector(logoutAction))
         navigationItem.rightBarButtonItem = logOutItem
     }

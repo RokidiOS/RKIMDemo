@@ -12,7 +12,7 @@ import RKIMCore
 import WCDBSwift
 import Kingfisher
 
-class RKTextMessageHistoryVC: RKBaseViewController {
+class RKTextMessageHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Properties
     //会话
@@ -50,6 +50,10 @@ class RKTextMessageHistoryVC: RKBaseViewController {
         return btn
     }()
     
+    @objc func leftBarButtonItemAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     lazy var tipLabel:UILabel = {
         let label = UILabel()
         label.textColor = .init(hex: 0x999999)
@@ -83,10 +87,10 @@ class RKTextMessageHistoryVC: RKBaseViewController {
         super.viewDidLoad()
         tipLabel.isHidden = false
         cancelButton.isHidden = false
+        setupView()
     }
     
-    override func setupView() {
-        super.setupView()
+    func setupView() {
         view.addSubViews([searchTextField, cancelButton, tipLabel, tableView])
         layoutInit()
     }
@@ -146,10 +150,7 @@ class RKTextMessageHistoryVC: RKBaseViewController {
             self.tableView.reloadData()
         }
     }
-}
 
-
-extension RKTextMessageHistoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return messageSearchDataList.count
     }

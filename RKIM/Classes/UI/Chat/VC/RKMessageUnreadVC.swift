@@ -10,7 +10,7 @@ import RKIMCore
 import Kingfisher
 import Foundation
 
-class RKMessageUnreadVC: RKBaseViewController {
+class RKMessageUnreadVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     static func show(_ groupId: String, _ messageId: String) -> UINavigationController {
         let unreadVC = RKMessageUnreadVC()
@@ -74,9 +74,8 @@ class RKMessageUnreadVC: RKBaseViewController {
         
         return tableView
     }()
-}
 
-extension RKMessageUnreadVC: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

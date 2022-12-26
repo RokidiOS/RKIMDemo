@@ -17,7 +17,7 @@ enum GroupSelectAction: String {
     case remove = "移除群成员"
     case reOwner = "移交群组"
 }
-class RKGroupdDetailVC: RKBaseViewController {
+class RKGroupdDetailVC: UIViewController {
     var action:GroupSelectAction = .members {
         didSet {
             self.title = action.rawValue
@@ -30,8 +30,12 @@ class RKGroupdDetailVC: RKBaseViewController {
         }
     }
     
-    open override func setupView() {
-        super.setupView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView() {
         view.addSubview(addressBookListView)
         addressBookListView.listViewDeleagte = self
         addressBookListView.snp.makeConstraints { make in

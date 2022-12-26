@@ -11,7 +11,7 @@ import RKIBaseView
 import RKIUtils
 import RKIMCore
 
-class RKAddressBookGroupViewController: RKBaseViewController {
+class RKAddressBookGroupViewController: UIViewController {
     
     // 联系人分组
     var contactGroups: [RKIMGroup] = [] {
@@ -28,10 +28,10 @@ class RKAddressBookGroupViewController: RKBaseViewController {
         super.viewDidLoad()
         
         self.title = LocalizedString("collaborationdesk_group")
+        setupView()
     }
     
-    override func setupView() {
-        super.setupView()
+    func setupView() {
         
         self.addressBookGroupListView.delegate = self
         self.addressBookGroupListView.listViewDelegate = self

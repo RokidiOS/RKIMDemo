@@ -13,7 +13,7 @@ import UIKit
 import Kingfisher
 import WCDBSwift
 
-class RKChatSettingVC: RKBaseViewController {
+class RKChatSettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     enum rkSettingType: String {
         case member = "member"
         case chatHistory = "chatHistory"
@@ -36,6 +36,7 @@ class RKChatSettingVC: RKBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "群聊信息"
+        setupView()
         registerCells()
         loadData()
     }
@@ -53,8 +54,8 @@ class RKChatSettingVC: RKBaseViewController {
 
         
     }
-    override func setupView() {
-        super.setupView()
+    
+    func setupView() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view)
@@ -84,9 +85,7 @@ class RKChatSettingVC: RKBaseViewController {
         editVC.groupInfo = groupInfo
         navigationController?.pushViewController(editVC, animated: true)
     }
-}
 
-extension RKChatSettingVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return cellTyps.count
     }

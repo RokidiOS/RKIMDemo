@@ -11,7 +11,7 @@ import Kingfisher
 import SnapKit
 import RKIBaseView
 
-class RKUserDetailInfoViewController: RKBaseViewController {
+class RKUserDetailInfoViewController: UIViewController {
 
     var info = RKIMUser() {
         didSet {

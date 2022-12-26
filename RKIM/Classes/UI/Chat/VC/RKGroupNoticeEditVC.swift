@@ -13,7 +13,7 @@ import UIKit
 import RKIHandyJSON
 import RKIUtils
 
-class RKGroupNoticeEditVC: RKBaseViewController {
+class RKGroupNoticeEditVC: UIViewController {
     var groupInfo = RKIMGroup() {
         didSet {
             notiModel = JSONDeserializer<DemoNoticeModel>.deserializeFrom(json: groupInfo.groupConfig)

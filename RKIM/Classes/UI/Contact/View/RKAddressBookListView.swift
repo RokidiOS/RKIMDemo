@@ -19,7 +19,7 @@ import RKIMCore
     func singleClick(_ userId: String)
 }
 
-open class RKAddressBookListView: RKBaseTableView {
+open class RKAddressBookListView: RKBaseTableView,UITableViewDataSource, UITableViewDelegate {
     
     weak var listViewDeleagte: AddressBookListViewDeleagte?
     // 创建特殊的联系人用于标记分组
@@ -110,18 +110,15 @@ open class RKAddressBookListView: RKBaseTableView {
     open override func reloadData() {
         super.reloadData()
     }
-}
-
-extension RKAddressBookListView: UITableViewDataSource, UITableViewDelegate {
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @objc public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataList.count
     }
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.listViewDeleagte?.click(indexPath.row)
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    @objc public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let contactInfoModel = self.dataList[indexPath.row]
         if contactInfoModel.userId == contactInfoMarkUserId {

@@ -21,11 +21,13 @@ import RKIMCore
 import WCDBSwift
 import QuickLook
 
-public class RKChatDetailVC: RKBaseViewController {
+public class RKChatDetailVC: UIViewController,
+                             UITableViewDelegate, UITableViewDataSource, QLPreviewControllerDelegate, QLPreviewControllerDataSource {
     
     // MARK: lifeCycle
     public override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         firstMessageTms = Int(nowTime())
         //有历史消息时，自动定位到当前历史消息
         if let _ = locationMessage {
@@ -41,6 +43,7 @@ public class RKChatDetailVC: RKBaseViewController {
         RKIMManager.share.addDelegate(newDelegate: self)
 
         unreadAction()
+        
     }
     
     deinit {
@@ -229,8 +232,7 @@ public class RKChatDetailVC: RKBaseViewController {
     
 
     // MARK: UI config
-    public override func setupView() {
-        super.setupView()
+    func setupView() {
         view.addSubViews([chatTableView, bottomFunctionView])
         layoutUI()
         navigationConfig()
@@ -443,19 +445,16 @@ public class RKChatDetailVC: RKBaseViewController {
         }
         return voiceTipView
     }()
-}
 
-// MARK: TableViewDelegate DataSource
-extension RKChatDetailVC: UITableViewDelegate, UITableViewDataSource {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @objc public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messageList.count
     }
     
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    @objc public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    @objc public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.register(RKChatTxtCell.classForCoder(), forCellReuseIdentifier: RKChatTxtCell.cellIdeString)
         tableView.register(RKChatImageCell.classForCoder(), forCellReuseIdentifier: RKChatImageCell.cellIdeString)
         tableView.register(RKChatSystemCell.classForCoder(), forCellReuseIdentifier: RKChatSystemCell.cellIdeString)
@@ -1063,11 +1062,7 @@ extension RKChatDetailVC {
         })
     }
     
-}
-
-
-extension RKChatDetailVC: QLPreviewControllerDelegate, QLPreviewControllerDataSource {
-    public func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+    @objc(numberOfPreviewItemsInPreviewController:) public func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
         return 1
     }
     

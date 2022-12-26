@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 import RKIBaseView
 
-class RKWKWebViewController: RKBaseViewController {
+class RKWKWebViewController: UIViewController {
 
     var url: URL?
     

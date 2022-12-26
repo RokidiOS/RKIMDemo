@@ -14,7 +14,7 @@ protocol AddressBookGroupListViewDeleagte: NSObjectProtocol {
     func cellCallButtonAction(_ index: Int)
 }
 
-class RKAddressBookGroupListView: RKBaseTableView {
+class RKAddressBookGroupListView: RKBaseTableView, UITableViewDataSource {
     
     weak var listViewDelegate: AddressBookGroupListViewDeleagte?
     
@@ -47,9 +47,6 @@ class RKAddressBookGroupListView: RKBaseTableView {
     @objc func cellCallButtonAction(_ sender: UIButton) {
         listViewDelegate? .cellCallButtonAction(sender.tag)
     }
-}
-
-extension RKAddressBookGroupListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactGroups.count
