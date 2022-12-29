@@ -28,7 +28,7 @@ public enum EnvType: Int {
    public func imURl() ->String {
         switch self {
         case .test:
-            return "https://im-test.rokid-inc.com/business/"
+            return "https://im-test.rokid.com/business/"
         case .develop:
             return "https://im-dev.rokid-inc.com/business/"
         case .product:
@@ -39,8 +39,8 @@ public enum EnvType: Int {
    public func socketURl() ->String {
         switch self {
         case .test:
-//            return "wss://im-testwss.rokid-inc.com/ws/"
-            return "wss://rtc-hyh.rokid-inc.com:8886/socket/"
+            return "wss://im-testwss.rokid.com/ws/"
+//            return "wss://rtc-hyh.rokid-inc.com:8886/socket/"
         case .develop:
             return "wss://im-devwss.rokid-inc.com/ws/"
         case .product:

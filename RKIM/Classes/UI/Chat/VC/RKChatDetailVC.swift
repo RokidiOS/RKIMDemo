@@ -43,7 +43,9 @@ public class RKChatDetailVC: UIViewController,
         RKIMManager.share.addDelegate(newDelegate: self)
 
         unreadAction()
-        
+        if groupInfo?.groupType == .workspaceGroup {
+            bottomFunctionView.isHidden = true
+        }
     }
     
     deinit {
@@ -471,7 +473,7 @@ public class RKChatDetailVC: UIViewController,
                 cell.setModel(message)
             }
             return systemCell
-        case .Text:
+        case .Text,.work:
             let textCell = tableView.dequeueReusableCell(withIdentifier: RKChatTxtCell.cellIdeString, for: indexPath)
             if let cell = textCell as? RKChatTxtCell {
                 cell.setModel(message, isShowTime)

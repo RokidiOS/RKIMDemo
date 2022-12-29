@@ -128,6 +128,11 @@ open class RKChatListVC: UIViewController {
             }
             return false
         }
+        
+        groupList = groupList.sorted { (s1: RKIMGroup, s2: RKIMGroup) in
+            return s1.groupType == .workspaceGroup
+        }
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

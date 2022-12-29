@@ -120,7 +120,8 @@ class RKChatTxtCell: RKChatDetailCell {
         
         var color: UIColor?
         let txtStr = message.messageDetailModel?.content
-        let str = message.messageType != .Text ? "未知消息" : txtStr
+        var str = message.messageType != .Text ? "未知消息" : txtStr
+        str = message.messageType == .work ? (message.messageDetail ?? "") : str
         let attStr = NSMutableAttributedString(string: str ?? "")
                
         let url = RKChatToolkit.formateUrl(urlString: str ?? "")

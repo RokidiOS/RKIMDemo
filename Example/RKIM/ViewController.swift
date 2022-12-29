@@ -58,7 +58,10 @@ class ViewController: UIViewController {
             env = .product
         }
         LoginHelper.kurlPrex = env.sassURl()
-        LoginHelper.loginAction(companyID: "rokid", userName: userName, password: password, compeletBlock: { [self] uuid, token, erroMsg ,_ ,_  in
+//        LoginHelper.kurlPrex = "https://saas-ar-dev.rokid-inc.com"
+        //env.sassURl()
+//        LoginHelper.kurlPrex =  "https://saas-ar.rokid.com"
+        LoginHelper.loginAction(companyID: "rokid", userName: userName, password: password, compeletBlock: { [self] uuid, token, erroMsg1 ,erroMsg2 ,erroMsg  in
             guard let _ = uuid, let token = token else {
                 if let msg = erroMsg {
                     RKToast.show(withText: msg, duration: 2, in: self.view)
